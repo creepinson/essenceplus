@@ -4,6 +4,7 @@ package me.creepinson.Main;
 import jline.internal.Log;
 import me.creepinson.handlers.EventHandlerMOD;
 import me.creepinson.handlers.ItemHandler;
+import me.creepinson.handlers.MobDropsHandler;
 import me.creepinson.item.FireCore;
 import me.creepinson.item.FireEssence;
 import me.creepinson.lib.IProxy;
@@ -42,7 +43,8 @@ public static IProxy proxy;
     	 
 		proxy.init();
     	MinecraftForge.EVENT_BUS.register(new EventHandlerMOD());
-    	
+    	MinecraftForge.EVENT_BUS.register(new MobDropsHandler());
+
     	Log.info("MeepersPlus Mod Initialized...");
     }
     @EventHandler
