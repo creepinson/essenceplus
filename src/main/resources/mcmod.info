@@ -1,0 +1,16 @@
+[
+{
+  "modid": "meepersplus",
+  "name": "MeepersPLus",
+  "description": "My first amazing mod",
+  "version": "1.0.0",
+  "mcversion": "1.10.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Creepinson101"],
+  "credits": "Creepinson101, Minecraft Forge",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": [mod_minecraftForge]
+}
+]
