@@ -29,7 +29,7 @@ public class StickOfLightning extends ModItems{
 	Vec3d meeper = Minecraft.getMinecraft().objectMouseOver.hitVec;
 
 		world.addWeatherEffect(new EntityLightningBolt(world, meeper.xCoord, meeper.yCoord, meeper.zCoord, bFull3D));
-       user.setHealth(9);
+       user.setHealth(13);
 	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
 	}
 }
