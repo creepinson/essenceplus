@@ -26,11 +26,21 @@ public class StickOfLightning extends ModItems{
 	public ActionResult<ItemStack> onItemRightClick(ItemStack item, World world, EntityPlayer user, EnumHand hand)
 
 	{
-	Vec3d meeper = Minecraft.getMinecraft().objectMouseOver.hitVec;
+		if(!world.isRemote){
+			RayTraceResult pos = user.rayTrace(100, 20);
+			double x = pos.getBlockPos().getX();
+			double y = pos.getBlockPos().getY();
+			double z = pos.getBlockPos().getZ();
 
-		world.addWeatherEffect(new EntityLightningBolt(world, meeper.xCoord, meeper.yCoord, meeper.zCoord, bFull3D));
-       user.setHealth(13);
-	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
+			world.addWeatherEffect(new EntityLightningBolt(world, x, y, z, bFull3D));
+		       user.setHealth(13);
+		       return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
+		}
+	
+		else{
+		    return new ActionResult(EnumActionResult.FAIL, new ItemStack(this));
+		}
+	
 	}
 }
 
