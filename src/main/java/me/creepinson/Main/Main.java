@@ -45,7 +45,7 @@ public static IProxy proxy;
     	MinecraftForge.EVENT_BUS.register(new EventHandlerMOD());
     	MinecraftForge.EVENT_BUS.register(new MobDropsHandler());
 
-    	me.creepinson.lib.Utils.logger.info("MeepersPlus Mod Initialized...");
+    	
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent PostEvent)
