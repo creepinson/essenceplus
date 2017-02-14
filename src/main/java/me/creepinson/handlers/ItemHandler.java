@@ -5,6 +5,7 @@ import me.creepinson.item.FireCore;
 import me.creepinson.item.FireEssence;
 import me.creepinson.item.StickOfLightning;
 import me.creepinson.item.Syringe_Full_Player;
+import me.creepinson.item.Syringe_Full_Zombie;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -17,6 +18,7 @@ public class ItemHandler {
 	public static Item FireEssence;
 	public static Item Syringe;
 	public static Item Syringe_Full_Player;
+	public static Item Syringe_Full_Zombie;
 	public static Item BloodEssence;
 	 public static void init(){
 
@@ -26,6 +28,7 @@ public class ItemHandler {
 		 FireEssence = new FireEssence("FireEssence", CreativeTabs.MATERIALS);
 		 Syringe = new me.creepinson.item.Syringe("Syringe", CreativeTabs.MATERIALS).setMaxStackSize(1);
 		 Syringe_Full_Player = new Syringe_Full_Player("Syringe_Full_Player", CreativeTabs.MATERIALS).setMaxStackSize(1);
+		 Syringe_Full_Zombie = new Syringe_Full_Zombie("Syringe_Full_Zombie", CreativeTabs.MATERIALS).setMaxStackSize(1);
 		 BloodEssence = new BloodEssence("BloodEssence", CreativeTabs.MATERIALS);
 	 }
 	 
@@ -38,6 +41,8 @@ public class ItemHandler {
 		 GameRegistry.register(Syringe);
 		 GameRegistry.register(Syringe_Full_Player);
 		 GameRegistry.register(BloodEssence);
+		 GameRegistry.register(Syringe_Full_Zombie);
+	 
 	 }
 	 
 	 public static void registerRenders(){
@@ -46,6 +51,7 @@ public class ItemHandler {
       registerRender(FireEssence);
       registerRender(Syringe);
 	  registerRender(Syringe_Full_Player);
+	  registerRender(Syringe_Full_Zombie);
       registerRender(BloodEssence);     
       
 	 }
