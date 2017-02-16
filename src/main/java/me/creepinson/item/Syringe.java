@@ -42,7 +42,7 @@ for(int i = 0; i < SyringeTypes.values().length; i++)
 	items.add(new ItemStack(item, 1, i));
 
 	
-	super.getSubItems(item, tab, items);
+	
 	}
 	
 	@Override

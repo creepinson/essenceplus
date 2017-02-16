@@ -1,6 +1,6 @@
 package me.creepinson.Main;
 
-public class ServerProxy {
+public class ServerProxy extends CommonProxy{
 public void registerRenderInfo(){
 	
 }
