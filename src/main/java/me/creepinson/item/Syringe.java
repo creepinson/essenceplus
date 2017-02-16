@@ -64,18 +64,23 @@ for(int i = 0; i < SyringeTypes.values().length; i++)
 	}
 	public boolean itemInteractionForEntity(ItemStack item, EntityPlayer user, EntityLivingBase target, EnumHand hand)
     {
+  if(item.getItemDamage() == 0)
+  {
+	  if (target instanceof EntityZombie)
   
-         if (target instanceof EntityZombie)
         {
         	 user.inventory.deleteStack(user.getHeldItem(hand));
 				user.inventory.addItemStackToInventory(new ItemStack(ItemHandler.Syringe_Full_Zombie, 1));
 		    
             return true;
         }
-        else
-        {
+  }
+  else
+  {
             return super.itemInteractionForEntity(item, user, target, hand);
-        }
+        
+	  }
+  return super.itemInteractionForEntity(item, user, target, hand);
     }
 
 	
