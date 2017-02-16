@@ -18,8 +18,6 @@ public class ItemHandler {
 	public static Item FireCore;
 	public static Item FireEssence;
 	public static Item Syringe;
-	public static Item Syringe_Full_Player;
-	public static Item Syringe_Full_Zombie;
 	public static Item BloodEssence;
 	 public static void init(){
 
@@ -56,7 +54,7 @@ public class ItemHandler {
 	 
 	 public static void registerRender(Item item, int meta, String fileName){
 			
-		 ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(fileName, "inventory"));
+		 ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName().toString() + "_" + EnumHandler.SyringeTypes.values()[meta].getName(), "inventory"));
 
 	 }
 
