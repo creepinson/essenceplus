@@ -1,0 +1,48 @@
+{
+	"parent": "block/cube_all",
+	"__comment": "Designed by Creepinson with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"MobChamberCore": "meepersplus:blocks/mobchambercore"
+	},
+	"elements": [
+		{
+			"__comment": "Cube1",
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 8.5, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 7.5, 16, 16 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 7.5, 16, 16 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 7.5, 16, 16 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 7.5, 16, 16 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Cube2",
+			"from": [ 5, 8.5, 4.5 ],
+			"to": [ 11, 12, 12 ],
+			"faces": {
+				"down": { "uv": [ 5, 4, 11, 11.5 ], "texture": "#texture" },
+				"up": { "uv": [ 5, 4.5, 11, 12 ], "texture": "#texture" },
+				"north": { "uv": [ 5, 4, 11, 7.5 ], "texture": "#texture" },
+				"south": { "uv": [ 5, 4, 11, 7.5 ], "texture": "#texture" },
+				"west": { "uv": [ 4.5, 4, 12, 7.5 ], "texture": "#texture" },
+				"east": { "uv": [ 4, 4, 11.5, 7.5 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Cube3",
+			"from": [ 6.5, 12, 6 ],
+			"to": [ 9.5, 15, 10.5 ],
+			"faces": {
+				"down": { "uv": [ 6.5, 5.5, 9.5, 10 ], "texture": "#texture" },
+				"up": { "uv": [ 6.5, 6, 9.5, 10.5 ], "texture": "#texture" },
+				"north": { "uv": [ 6.5, 1, 9.5, 4 ], "texture": "#texture" },
+				"south": { "uv": [ 6.5, 1, 9.5, 4 ], "texture": "#texture" },
+				"west": { "uv": [ 6, 1, 10.5, 4 ], "texture": "#texture" },
+				"east": { "uv": [ 5.5, 1, 10, 4 ], "texture": "#texture" }
+			}
+		}
+	]
+}

@@ -25,8 +25,9 @@ public class ItemHandler {
 		 StickOfLightning = new StickOfLightning("StickOfLightning", CreativeTabs.MATERIALS);
 		 FireCore = new FireCore("FireCore", CreativeTabs.MATERIALS);
 		 FireEssence = new FireEssence("FireEssence", CreativeTabs.MATERIALS);
-		 Syringe = new me.creepinson.item.Syringe("Syringe_Empty", CreativeTabs.MATERIALS).setMaxStackSize(1);
+		 Syringe = new me.creepinson.item.Syringe("Syringe", CreativeTabs.MATERIALS).setMaxStackSize(1);
 		 BloodEssence = new BloodEssence("BloodEssence", CreativeTabs.MATERIALS);
+	     
 	 }
 	 
 	 public static void register(){

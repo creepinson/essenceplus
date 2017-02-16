@@ -6,3 +6,5 @@ item.Syringe.Full_Player.name=Full Player Blood Syringe
 item.Syringe.Full_Zombie.name=Full Zombie Blood Syringe
 item.BloodEssence.name=Blood Essence
 item.Syringe_Empty.name=Empty Syringe
+tile.MobChamber.name=Mob Chamber
+tile.MobChamberCore.name=Mob Chamber Core

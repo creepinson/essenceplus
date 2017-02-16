@@ -1,5 +1,6 @@
 package me.creepinson.Main;
 
+import me.creepinson.handlers.BlockHandler;
 import me.creepinson.handlers.CraftingHandler;
 import me.creepinson.handlers.ItemHandler;
 import me.creepinson.lib.IProxy;
@@ -11,7 +12,9 @@ public class CommonProxy implements IProxy{
 
 	@Override
 	public void preInit() {
-	
+		BlockHandler.init();
+		  BlockHandler.register();
+
 		 ItemHandler.init();
 		  ItemHandler.register();
 		  
