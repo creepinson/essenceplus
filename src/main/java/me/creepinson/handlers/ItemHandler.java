@@ -1,5 +1,6 @@
 package me.creepinson.handlers;
 
+import me.creepinson.handlers.EnumHandler.SyringeTypes;
 import me.creepinson.item.BloodEssence;
 import me.creepinson.item.FireCore;
 import me.creepinson.item.FireEssence;
@@ -27,8 +28,6 @@ public class ItemHandler {
 		 FireCore = new FireCore("FireCore", CreativeTabs.MATERIALS);
 		 FireEssence = new FireEssence("FireEssence", CreativeTabs.MATERIALS);
 		 Syringe = new me.creepinson.item.Syringe("Syringe", CreativeTabs.MATERIALS).setMaxStackSize(1);
-		 Syringe_Full_Player = new Syringe_Full_Player("Syringe_Full_Player", CreativeTabs.MATERIALS).setMaxStackSize(1);
-		 Syringe_Full_Zombie = new Syringe_Full_Zombie("Syringe_Full_Zombie", CreativeTabs.MATERIALS).setMaxStackSize(1);
 		 BloodEssence = new BloodEssence("BloodEssence", CreativeTabs.MATERIALS);
 	 }
 	 
@@ -39,9 +38,7 @@ public class ItemHandler {
 		 GameRegistry.register(FireEssence);
 		 GameRegistry.register(StickOfLightning);
 		 GameRegistry.register(Syringe);
-		 GameRegistry.register(Syringe_Full_Player);
 		 GameRegistry.register(BloodEssence);
-		 GameRegistry.register(Syringe_Full_Zombie);
 	 
 	 }
 	 
@@ -49,12 +46,20 @@ public class ItemHandler {
       registerRender(StickOfLightning);
       registerRender(FireCore);
       registerRender(FireEssence);
-      registerRender(Syringe);
-	  registerRender(Syringe_Full_Player);
-	  registerRender(Syringe_Full_Zombie);
+
       registerRender(BloodEssence);     
-      
+      for(int i = 0; i < SyringeTypes.values().length; i++)
+		{
+    	  registerRender(Syringe, i, "Syringe_" + EnumHandler.SyringeTypes.values()[i].getName());
+		}
 	 }
+	 
+	 public static void registerRender(Item item, int meta, String fileName){
+			
+		 Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, meta, new ModelResourceLocation(fileName, "inventory"));
+
+	 }
+
 	 
 	 public static void registerRender(Item item){
 			

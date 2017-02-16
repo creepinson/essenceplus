@@ -28,14 +28,14 @@ public class Main {
 	@net.minecraftforge.fml.common.SidedProxy(clientSide = RefStrings.CLIENTSIDE, serverSide = RefStrings.SERVERSIDE)
 
 public static IProxy proxy;
-
+public static CommonProxy proxy_common;
     //INITS
     @net.minecraftforge.fml.common.Mod.EventHandler
     public void preInit(FMLPreInitializationEvent PreEvent)
     {
  
 		proxy.preInit();
-	
+
     }
     @EventHandler
     public void init(FMLInitializationEvent event)
@@ -44,7 +44,7 @@ public static IProxy proxy;
 		proxy.init();
     	MinecraftForge.EVENT_BUS.register(new EventHandlerMOD());
     	MinecraftForge.EVENT_BUS.register(new MobDropsHandler());
-
+    
     	
     }
     @EventHandler
