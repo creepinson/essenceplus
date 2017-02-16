@@ -1,3 +1,8 @@
 item.FireEssence.name=Fire Essence
 item.FireCore.name=Core of the Fire
-item.StickOfFire.name=Staff of The Fire
+item.StickOfLightning.name=Staff of Lightning
+item.Syringe.Empty.name=Empty Syringe
+item.Syringe.Full_Player.name=Full Player Blood Syringe
+item.Syringe.Full_Zombie.name=Full Zombie Blood Syringe
+item.BloodEssence.name=Blood Essence
+item.Syringe_Empty.name=Empty Syringe

@@ -70,7 +70,7 @@ for(int i = 0; i < SyringeTypes.values().length; i++)
   
         {
         	 user.inventory.deleteStack(user.getHeldItem(hand));
-				user.inventory.addItemStackToInventory(new ItemStack(ItemHandler.Syringe_Full_Zombie, 1));
+				user.inventory.addItemStackToInventory(new ItemStack(ItemHandler.Syringe, 1, 1));
 		    
             return true;
         }
@@ -88,20 +88,24 @@ for(int i = 0; i < SyringeTypes.values().length; i++)
 	public ActionResult<ItemStack> onItemRightClick(ItemStack item, World world, EntityPlayer user, EnumHand hand)
 
 	{
-		
+		 if(item.getItemDamage() == 0)
+		  {
 				RayTraceResult raytrace = ForgeHooks.rayTraceEyes(user, 5);
 			    
 			   
 			    	
 			    	user.inventory.deleteStack(item);
-					user.inventory.addItemStackToInventory(new ItemStack(ItemHandler.Syringe_Full_Player, 1));
-			    
+					user.inventory.addItemStackToInventory(new ItemStack(ItemHandler.Syringe, 1, 2));
+		  }
 					return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
 			    }
 			 
+	
+	
+	
 			}
 		
-		
+
 		
 
 

@@ -5,12 +5,12 @@ import me.creepinson.item.BloodEssence;
 import me.creepinson.item.FireCore;
 import me.creepinson.item.FireEssence;
 import me.creepinson.item.StickOfLightning;
-import me.creepinson.item.Syringe_Full_Player;
-import me.creepinson.item.Syringe_Full_Zombie;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ItemHandler {
@@ -56,14 +56,14 @@ public class ItemHandler {
 	 
 	 public static void registerRender(Item item, int meta, String fileName){
 			
-		 Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, meta, new ModelResourceLocation(fileName, "inventory"));
+		 ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(fileName, "inventory"));
 
 	 }
 
 	 
 	 public static void registerRender(Item item){
 			
-		 Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+		 ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 
 	 }
 }
