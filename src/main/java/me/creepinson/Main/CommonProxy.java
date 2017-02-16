@@ -20,7 +20,7 @@ public class CommonProxy implements IProxy{
 	@Override
 	public void init() {
 	
-		CommonProxy.registerModelBakeryVarients();
+	
 		
 	}
 
