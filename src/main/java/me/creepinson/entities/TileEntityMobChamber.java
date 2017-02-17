@@ -127,7 +127,7 @@ private boolean isFormed = false;
 		@Override
 		public ItemStack getStackInSlot(int index) {
 		
-			return new ItemStack();
+			return null;
 		}
 		@Override
 		public ItemStack decrStackSize(int index, int count) {
