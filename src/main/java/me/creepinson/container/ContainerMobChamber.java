@@ -43,7 +43,7 @@ public class ContainerMobChamber extends Container{
 }
 	@Override
 	public boolean canInteractWith(EntityPlayer playerIn) {
-	
+	TileEntityMobChamber.isUseableByPlayer(playerIn);
 		return true;
 	}
 

@@ -4,8 +4,11 @@ import me.creepinson.handlers.BlockHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -18,7 +21,7 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class TileEntityMobChamber extends TileEntity implements ITickable, ICapabilityProvider{
+public class TileEntityMobChamber extends TileEntity implements ITickable, ICapabilityProvider, IInventory{
 
 private ItemStackHandler handler;	
 private boolean isFormed = false;
@@ -106,6 +109,86 @@ private boolean isFormed = false;
 	    {
 	        readFromNBT(pkt.getNbtCompound());
 	    }
+		@Override
+		public String getName() {
+			
+			return null;
+		}
+		@Override
+		public boolean hasCustomName() {
+		
+			return false;
+		}
+		@Override
+		public int getSizeInventory() {
+			
+			return 0;
+		}
+		@Override
+		public ItemStack getStackInSlot(int index) {
+		
+			return null;
+		}
+		@Override
+		public ItemStack decrStackSize(int index, int count) {
+	
+			return null;
+		}
+		@Override
+		public ItemStack removeStackFromSlot(int index) {
+	
+			return null;
+		}
+		@Override
+		public void setInventorySlotContents(int index, ItemStack stack) {
+			
+			
+		}
+		@Override
+		public int getInventoryStackLimit() {
+		
+			return 0;
+		}
+		@Override
+		public boolean isUseableByPlayer(EntityPlayer player) {
+			 return worldObj.getTileEntity(pos) == this && player.getDistanceSq((double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D) <= 64.0D;
+			
+		}
+		@Override
+		public void openInventory(EntityPlayer player) {
+		
+			
+		}
+		@Override
+		public void closeInventory(EntityPlayer player) {
+
+			
+		}
+		@Override
+		public boolean isItemValidForSlot(int index, ItemStack stack) {
+		
+			return false;
+		}
+		@Override
+		public int getField(int id) {
+	
+			return 0;
+		}
+		@Override
+		public void setField(int id, int value) {
+		
+			
+		}
+		@Override
+		public int getFieldCount() {
+		
+			return 0;
+		}
+		@Override
+		public void clear() {
+		
+			
+		}
 	}
 
 	
