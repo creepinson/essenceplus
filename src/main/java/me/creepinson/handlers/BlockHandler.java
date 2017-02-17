@@ -16,9 +16,10 @@ public class BlockHandler {
 	public static Block BlockMobChamber;
 	public static ItemBlock MobChamber;
 	
+	
 	public static void init(){
 	 
-		BlockMobChamber = new BlockMobChamber(Material.ROCK, "MobChamber", CreativeTabs.BUILDING_BLOCKS, 5F, 15F, 3, "pickaxe");
+		BlockMobChamber = new BlockMobChamber(Material.ROCK, "MobChamber", CreativeTabs.BUILDING_BLOCKS, 5F, 15F, 3, "MobChamber");
 		  
 	    MobChamber = (ItemBlock) new ItemBlock(BlockMobChamber);
 	   

@@ -2,7 +2,7 @@
 	"parent": "block/cube_all",
 	"__comment": "Designed by Creepinson with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"MobChamber": "meepersplus:blocks/mobchamber"
+		"texture": "meepersplus:blocks/mobchamber"
 	},
 	"elements": [
 		{
