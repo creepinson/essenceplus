@@ -21,15 +21,12 @@ public class CommonProxy implements IProxy{
 		  ItemHandler.register();
 		  
 	}
-public void registerTileEntities(){
-	
-	GameRegistry.registerTileEntity(TileEntityMobChamber.class, RefStrings.MODID + ":"+ "mobchamber");
-	
-}
+
 	@Override
 	public void init() {
 	
-	
+		GameRegistry.registerTileEntity(TileEntityMobChamber.class, RefStrings.MODID + ":"+ "mobchamber");
+		
 		
 	}
 

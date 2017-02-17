@@ -35,7 +35,7 @@ public class Main {
 	
 	
 	public static IProxy proxy;
-	public static CommonProxy proxy_common;
+
 
     //INITS
     @net.minecraftforge.fml.common.Mod.EventHandler
@@ -43,7 +43,7 @@ public class Main {
     {
  
 		proxy.preInit();
-      proxy_common.registerTileEntities();
+     
     }
     @EventHandler
     public void init(FMLInitializationEvent event)
