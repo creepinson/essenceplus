@@ -29,8 +29,8 @@ public boolean checkMultiBlockForm() {
                  }
              }
     BlockPos center = new BlockPos(xCoord, yCoord + 1, zCoord); 
-    // check if there are 26 blocks present ((3*3*3) - 1) and check that center block is empty
-     return i > 25 && worldObj.getBlockState(center) == BlockHandler.BlockMobChamberCore;
+    // check if there are 26 blocks present ((3*3*3) - 1)
+     return i > 26 && worldObj.getBlockState(center) == BlockHandler.BlockMobChamberCore;
 }
 	    private boolean hasMaster, isMaster;
 	    private int masterX, masterY, masterZ;
@@ -42,7 +42,7 @@ public boolean checkMultiBlockForm() {
 	                    // Check if block is bottom center block
 	                    boolean master = (x == xCoord && y == yCoord && z == zCoord);
 	                    if (tile != null && (tile instanceof TileEntityMobChamberStructure)) {
-	                        ((TileEntityMobChamberStructure) tile).setMasterCoords(xCoord, yCoord, zCoord);
+	                        ((TileEntityMobChamberStructure) tile).setMasterCoords(x, y+1, z);
 	                        ((TileEntityMobChamberStructure) tile).setHasMaster(true);
 	                        ((TileEntityMobChamberStructure) tile).setIsMaster(master);
 	                    }
@@ -75,7 +75,7 @@ public boolean checkMultiBlockForm() {
 	    	    if (!worldObj.isRemote) {
 	    	        if (hasMaster()) { 
 	    	            if (isMaster()) {
-	    	                // Put stuff you want the multiblock to do here!
+	    	             worldObj.setBlockState(pos, BlockHandler.BlockMobChamber.getDefaultState());
 	    	            }
 	    	        } else {
 	    	            // Constantly check if structure is formed until it is.
