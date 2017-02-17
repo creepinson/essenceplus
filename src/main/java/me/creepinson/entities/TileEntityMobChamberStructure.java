@@ -1,5 +1,6 @@
 package me.creepinson.entities;
 import me.creepinson.handlers.BlockHandler;
+import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
@@ -20,12 +21,9 @@ public boolean checkMultiBlockForm() {
             	BlockPos pos = new BlockPos(x, y, z);
                  TileEntity tile = worldObj.getTileEntity(pos);
                  // Make sure tile isn't null, is an instance of the same Tile, and isn't already a part of a multiblock
-                 if (tile != null && (tile instanceof TileEntityMobChamberStructure)) {
-                     if (this.isMaster()) {
-                         if (((TileEntityMobChamberStructure)tile).hasMaster())
-                             i++;
-                     } else if (!((TileEntityMobChamberStructure)tile).hasMaster())
-                         i++;
+                 if (worldObj.getBlockState(pos).getBlock() == Blocks.STONE){
+                      i++;
+                   
                  }
              }
     BlockPos center = new BlockPos(xCoord, yCoord + 1, zCoord); 
