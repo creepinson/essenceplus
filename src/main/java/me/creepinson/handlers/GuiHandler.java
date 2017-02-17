@@ -2,6 +2,7 @@ package me.creepinson.handlers;
 
 import me.creepinson.container.ContainerMobChamber;
 import me.creepinson.entities.TileEntityMobChamber;
+import me.creepinson.gui.GuiMobChamber;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -24,7 +25,7 @@ public class GuiHandler implements IGuiHandler{
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		if(ID == MOB_CHAMBER){
-			return new ContainerMobChamber(player.inventory, (TileEntityMobChamber) world.getTileEntity(new BlockPos(x, y, z)));
+			return new GuiMobChamber(player.inventory, (TileEntityMobChamber) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 	return null;
 	

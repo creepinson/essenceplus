@@ -16,15 +16,15 @@ public class ContainerMobChamber extends Container{
 	public ContainerMobChamber(IInventory playersinv, TileEntityMobChamber te){
 	this.te = te;
 		IItemHandler handler = te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
-	this.addSlotToContainer(new SlotItemHandler(handler, 0, 62, 17));
-	this.addSlotToContainer(new SlotItemHandler(handler, 1, 80, 17));
-	this.addSlotToContainer(new SlotItemHandler(handler, 2, 98, 17));
-	this.addSlotToContainer(new SlotItemHandler(handler, 3, 62, 35));
-	this.addSlotToContainer(new SlotItemHandler(handler, 4, 80, 35));
-	this.addSlotToContainer(new SlotItemHandler(handler, 5, 98, 35));
-	this.addSlotToContainer(new SlotItemHandler(handler, 6, 62, 53));
-	this.addSlotToContainer(new SlotItemHandler(handler, 7, 80, 53));
-	this.addSlotToContainer(new SlotItemHandler(handler, 8, 98, 53));
+	this.addSlotToContainer(new Slot(playersinv, 0, 62, 17));
+	this.addSlotToContainer(new Slot(playersinv, 1, 80, 17));
+	this.addSlotToContainer(new Slot(playersinv, 2, 98, 17));
+	this.addSlotToContainer(new Slot(playersinv, 3, 62, 35));
+	this.addSlotToContainer(new Slot(playersinv, 4, 80, 35));
+	this.addSlotToContainer(new Slot(playersinv, 5, 98, 35));
+	this.addSlotToContainer(new Slot(playersinv, 6, 62, 53));
+	this.addSlotToContainer(new Slot(playersinv, 7, 80, 53));
+	this.addSlotToContainer(new Slot(playersinv, 8, 98, 53));
 		
 		int xPos = 8;
 		int yPos = 84;
