@@ -33,9 +33,9 @@ public class Main {
 	@net.minecraftforge.fml.common.SidedProxy(clientSide = RefStrings.CLIENTSIDE, serverSide = RefStrings.SERVERSIDE)
 //VARIABLES
 	
-	public static CommonProxy proxy_common;
+	
 	public static IProxy proxy;
-
+	public static CommonProxy proxy_common;
 
     //INITS
     @net.minecraftforge.fml.common.Mod.EventHandler
