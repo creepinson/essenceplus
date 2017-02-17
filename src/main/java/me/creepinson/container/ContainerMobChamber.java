@@ -33,12 +33,12 @@ public class ContainerMobChamber extends Container{
 		
 		for (int y = 0; y < 3; ++y) {
 			for (int x = 0; x < 9; ++x) {
-				this.addSlotToContainer(new Slot(te, x + y * 9 + 9, xPos + x * 18, yPos + y * 18));
+				this.addSlotToContainer(new Slot(playersinv, x + y * 9 + 9, xPos + x * 18, yPos + y * 18));
 			}
 		}
 				
 		for (int x = 0; x < 9; ++x) {
-			this.addSlotToContainer(new Slot(te, x, xPos + x * 18, yPos + 58));
+			this.addSlotToContainer(new Slot(playersinv, x, xPos + x * 18, yPos + 58));
 		}
 }
 	@Override
