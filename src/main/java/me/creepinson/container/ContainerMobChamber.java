@@ -14,7 +14,8 @@ public class ContainerMobChamber extends Container{
 	private TileEntityMobChamber te;
 
 	public ContainerMobChamber(IInventory playersinv, TileEntityMobChamber te){
-	this.te = te;
+	
+		this.te = te;
 		IItemHandler handler = te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 	this.addSlotToContainer(new Slot(te, 0, 62, 17));
 	this.addSlotToContainer(new Slot(te, 1, 80, 17));
@@ -44,7 +45,7 @@ public class ContainerMobChamber extends Container{
 	@Override
 	public boolean canInteractWith(EntityPlayer playerIn) {
 	te.isUseableByPlayer(playerIn);
-		return true;
+		return te.isUseableByPlayer(playerIn);
 	}
 
 	

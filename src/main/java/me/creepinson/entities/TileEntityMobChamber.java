@@ -22,7 +22,7 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityMobChamber extends TileEntity implements ITickable, ICapabilityProvider, IInventory{
-
+public ItemStack[] items = new ItemStack[9];
 private ItemStackHandler handler;	
 private boolean isFormed = false;
 	public TileEntityMobChamber() {
@@ -122,12 +122,12 @@ private boolean isFormed = false;
 		@Override
 		public int getSizeInventory() {
 			
-			return 0;
+			return 9;
 		}
 		@Override
 		public ItemStack getStackInSlot(int index) {
 		
-			return null;
+			return new ItemStack();
 		}
 		@Override
 		public ItemStack decrStackSize(int index, int count) {
@@ -147,7 +147,7 @@ private boolean isFormed = false;
 		@Override
 		public int getInventoryStackLimit() {
 		
-			return 0;
+			return 64;
 		}
 		@Override
 		public boolean isUseableByPlayer(EntityPlayer player) {
