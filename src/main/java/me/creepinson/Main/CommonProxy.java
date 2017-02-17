@@ -1,5 +1,6 @@
 package me.creepinson.Main;
 
+import me.creepinson.entities.TileEntityMobChamber;
 import me.creepinson.handlers.BlockHandler;
 import me.creepinson.handlers.CraftingHandler;
 import me.creepinson.handlers.ItemHandler;
@@ -7,6 +8,7 @@ import me.creepinson.lib.IProxy;
 import me.creepinson.lib.RefStrings;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy implements IProxy{
 
@@ -19,7 +21,11 @@ public class CommonProxy implements IProxy{
 		  ItemHandler.register();
 		  
 	}
-
+public void registerTileEntities(){
+	
+	GameRegistry.registerTileEntity(TileEntityMobChamber.class, RefStrings.MODID + ":"+ "mobchamber");
+	
+}
 	@Override
 	public void init() {
 	
