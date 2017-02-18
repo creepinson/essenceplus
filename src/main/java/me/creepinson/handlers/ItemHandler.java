@@ -19,7 +19,8 @@ public class ItemHandler {
 	public static Item FireEssence;
 	public static Item Syringe;
 	public static Item BloodEssence;
-	 public static void init(){
+	public static Item UtilitiesBag;
+	public static void init(){
 
 
 		 StickOfLightning = new StickOfLightning("StickOfLightning", CreativeTabs.MATERIALS);
@@ -27,13 +28,14 @@ public class ItemHandler {
 		 FireEssence = new FireEssence("FireEssence", CreativeTabs.MATERIALS);
 		 Syringe = new me.creepinson.item.Syringe("Syringe", CreativeTabs.MATERIALS).setMaxStackSize(1);
 		 BloodEssence = new BloodEssence("BloodEssence", CreativeTabs.MATERIALS);
-	     
+		 UtilitiesBag = new me.creepinson.item.UtilitiesBag("UtilitiesBag", CreativeTabs.MATERIALS);
 	 }
 	 
 	 public static void register(){
 	  
 		 
 		 GameRegistry.register(FireCore);
+		 GameRegistry.register(UtilitiesBag);
 		 GameRegistry.register(FireEssence);
 		 GameRegistry.register(StickOfLightning);
 		 GameRegistry.register(Syringe);
@@ -45,7 +47,7 @@ public class ItemHandler {
       registerRender(StickOfLightning);
       registerRender(FireCore);
       registerRender(FireEssence);
-
+      registerRender(UtilitiesBag);
       registerRender(BloodEssence);     
       for(int i = 0; i < SyringeTypes.values().length; i++)
 		{

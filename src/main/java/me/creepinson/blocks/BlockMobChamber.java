@@ -62,9 +62,7 @@ public TileEntity createNewTileEntity(World worldIn, int meta) {
 @Override
 public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ)
 {
- if(!worldIn.isRemote){
-	 playerIn.openGui(Main.instance, GuiHandler.MOB_CHAMBER, worldIn, pos.getX(), pos.getY(), pos.getZ());
- }
+
     return true;
 }
 @SideOnly(Side.CLIENT)
@@ -95,34 +93,6 @@ public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 	super.breakBlock(worldIn, pos, state);
 }
 
-public static void buildMob() {
-	World world = Minecraft.getMinecraft().theWorld;
-	EntityPlayer player = Minecraft.getMinecraft().thePlayer;
-	BlockPos pos = new BlockPos(player.getLook(1.0F).xCoord,player.getLook(1.0F).yCoord, player.getLook(1.0F).zCoord);
-	BlockPos posmeep = new BlockPos(player.getLook(1.0F).xCoord,player.getLook(1.0F).yCoord + 1, player.getLook(1.0F).zCoord);
-	TileEntity te = world.getTileEntity(posmeep);
-	
-	TileEntityMobChamber temb = new TileEntityMobChamber();
-	if(te != null && te instanceof TileEntityChest){
-	    for (int i = 0; i < ((TileEntityChest) te).getSizeInventory(); ++i){
-	        System.out.println(((TileEntityChest) te).getStackInSlot(i));
-	        System.out.println("testing...");
-        	-- temb.items[0].stackSize;
-        -- temb.items[1].stackSize;
-        -- temb.items[2].stackSize;
-           
-         }
-        }
-         else{
-        	 player.addChatComponentMessage(new TextComponentString(TextFormatting.RED + "Invalid Recipe/No Recipe/No Chest!"));
-        	
-         }
-	    
-	    }
-	
-	
 }
-
-
 
 
