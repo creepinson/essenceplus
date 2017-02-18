@@ -100,7 +100,7 @@ public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 public static void buildMob(BlockPos pos, World world, EntityPlayer player) {
 
 BlockPos posmain = pos.up(1);
-if(world.getTileEntity(pos) instanceof TileEntityChest){
+if(world.getTileEntity(posmain) instanceof TileEntityChest){
 
 	player.addChatComponentMessage(new TextComponentString(TextFormatting.GREEN + "You Called a Packet Succcesfully!"));
 	
