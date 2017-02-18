@@ -20,7 +20,7 @@ public class CustomPacketHandler implements IMessageHandler<CustomPacket, IMessa
 		EntityPlayerMP serverPlayer = ctx.getServerHandler().playerEntity;
 		int amount = message.toSend;	
 	
-		   BlockMobChamber.buildMob(	message.pos, serverPlayer.worldObj, serverPlayer);
+		   BlockMobChamber.buildMob(	message.poser, serverPlayer.worldObj, serverPlayer);
 		return null;
 	}
 

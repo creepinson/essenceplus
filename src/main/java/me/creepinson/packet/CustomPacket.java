@@ -5,10 +5,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 
 public class CustomPacket implements IMessage{
-	  
+	 public static BlockPos poser;
 	// A default constructor is always required
-	  public CustomPacket(BlockPos pos){}
-	  public static BlockPos pos;
+	  public CustomPacket(BlockPos pos){
+		  
+		  this.poser = pos;
+	  }
+	 
 	  public static int toSend;
 
 	  public static int posX;
@@ -33,6 +36,8 @@ public class CustomPacket implements IMessage{
 		  posX = buf.readInt();
 		  posY = buf.readInt();
 		  posZ = buf.readInt();
+		  poser = new BlockPos(posX, posY, posZ);
+		  	
 	  
 	  }
 	}
