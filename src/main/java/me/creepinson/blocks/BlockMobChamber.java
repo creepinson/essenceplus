@@ -10,17 +10,22 @@ import me.creepinson.handlers.GuiHandler;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -90,6 +95,34 @@ public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 	super.breakBlock(worldIn, pos, state);
 }
 
-
+public static void buildMob() {
+	World world = Minecraft.getMinecraft().theWorld;
+	EntityPlayer player = Minecraft.getMinecraft().thePlayer;
+	BlockPos pos = new BlockPos(player.getLook(1.0F).xCoord,player.getLook(1.0F).yCoord, player.getLook(1.0F).zCoord);
+	BlockPos posmeep = new BlockPos(player.getLook(1.0F).xCoord,player.getLook(1.0F).yCoord + 1, player.getLook(1.0F).zCoord);
+	TileEntity te = world.getTileEntity(posmeep);
+	
+	TileEntityMobChamber temb = new TileEntityMobChamber();
+	if(te != null && te instanceof TileEntityChest){
+	    for (int i = 0; i < ((TileEntityChest) te).getSizeInventory(); ++i){
+	        System.out.println(((TileEntityChest) te).getStackInSlot(i));
+	        System.out.println("testing...");
+        	-- temb.items[0].stackSize;
+        -- temb.items[1].stackSize;
+        -- temb.items[2].stackSize;
+           
+         }
+        }
+         else{
+        	 player.addChatComponentMessage(new TextComponentString(TextFormatting.RED + "Invalid Recipe/No Recipe/No Chest!"));
+        	
+         }
+	    
+	    }
+	
+	
 }
+
+
+
 
