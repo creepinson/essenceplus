@@ -42,7 +42,7 @@ this.te = new TileEntityMobChamber();
     	    
    
 
-
+@Override
     protected void actionPerformed(GuiButton button) throws IOException
     {
    
@@ -56,6 +56,17 @@ this.te = new TileEntityMobChamber();
             
              
             }
+
+@Override
+public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+    drawDefaultBackground();
+    GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+    drawGuiContainerBackgroundLayer(partialTicks, mouseX, mouseY);
+    super.drawScreen(mouseX, mouseY, partialTicks);
+    GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+    drawGuiContainerForegroundLayer(mouseX, mouseY);
+	super.drawScreen(mouseX, mouseY, partialTicks);
+}
     BlockPos posy;
     public GuiMobChamber(BlockPos pos){
 		
@@ -67,7 +78,9 @@ this.te = new TileEntityMobChamber();
 		
 	}
 
-	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
+	
+	
+protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		
 		
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
@@ -75,10 +88,8 @@ this.te = new TileEntityMobChamber();
 	  
 	}
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		String s = I18n.format("gui.utils1"); //Gets the formatted name for the block breaker from the language file - NOTE ADD "container.block_breaker=Block Breaker" to the language file (without quotes) and then delete this note
+		String s = I18n.format("gui.mobchamber"); //Gets the formatted name for the block breaker from the language file - NOTE ADD "container.block_breaker=Block Breaker" to the language file (without quotes) and then delete this note
 		this.mc.fontRendererObj.drawString(s, this.width / 2 - this.mc.fontRendererObj.getStringWidth(s) / 2, 6, 4210752); //Draws the block breaker name in the center on the top of the gui
 		
 	}
-	
-	
 }
