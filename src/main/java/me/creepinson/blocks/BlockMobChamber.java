@@ -63,7 +63,7 @@ public TileEntity createNewTileEntity(World worldIn, int meta) {
 public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ)
 {
 	
-		 player.openGui(Main.instance, GuiHandler.MOB_CHAMBER, world, (int) player.posX,  (int) player.posY,  (int) player.posZ);
+		 player.openGui(Main.instance, GuiHandler.MOB_CHAMBER, world, pos.getX(), pos.getY(), pos.getZ());
 	 
 	
 
