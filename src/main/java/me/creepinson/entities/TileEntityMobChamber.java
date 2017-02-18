@@ -124,10 +124,11 @@ private boolean isFormed = false;
 			
 			return 9;
 		}
+		
 		@Override
 		public ItemStack getStackInSlot(int index) {
 		
-			return null;
+			return items[index];
 		}
 		@Override
 		public ItemStack decrStackSize(int index, int count) {
