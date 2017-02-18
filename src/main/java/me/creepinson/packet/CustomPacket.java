@@ -18,8 +18,8 @@ public class CustomPacket implements IMessage{
 	  public static int posY;
 	  public static int posZ;
 	  
-	  public CustomPacket(int toSend) {
-	    this.toSend = toSend;
+	  public CustomPacket() {
+	    
 	   
 	  }
 

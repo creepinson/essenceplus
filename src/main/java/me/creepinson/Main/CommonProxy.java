@@ -26,7 +26,7 @@ public class CommonProxy implements IProxy{
 		  ItemHandler.register();
 		  
 	}
-	public static final SimpleNetworkWrapper INSTANCE = NetworkRegistry.INSTANCE.newSimpleChannel("mymodid");
+	public static final SimpleNetworkWrapper INSTANCE = NetworkRegistry.INSTANCE.newSimpleChannel("meepersplus");
 	
 	@Override
 	public void init() {
