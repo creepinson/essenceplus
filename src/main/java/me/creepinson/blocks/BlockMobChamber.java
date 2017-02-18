@@ -60,8 +60,12 @@ public TileEntity createNewTileEntity(World worldIn, int meta) {
 
 
 @Override
-public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ)
+public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ)
 {
+	 if(!world.isRemote){
+		 player.openGui(Main.instance, GuiHandler.MOB_CHAMBER, world, (int) player.posX,  (int) player.posY,  (int) player.posZ);
+	 }
+	
 
     return true;
 }
@@ -91,6 +95,24 @@ public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 	InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), stack);
 	}
 	super.breakBlock(worldIn, pos, state);
+}
+
+public static void buildMob(BlockPos pos, World world, EntityPlayer player) {
+
+BlockPos posmain = pos.up(1);
+if(world.getTileEntity(pos) instanceof TileEntityChest){
+
+	player.addChatComponentMessage(new TextComponentString(TextFormatting.GREEN + "You Called a Packet Succcesfully!"));
+	
+}
+	
+else{
+	
+	
+	player.addChatComponentMessage(new TextComponentString(TextFormatting.RED + "ACTION FAILED..."));
+	
+	
+}
 }
 
 }
