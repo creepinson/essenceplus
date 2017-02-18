@@ -23,6 +23,7 @@ import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityMobChamber extends TileEntity implements ITickable, ICapabilityProvider, IInventory{
 public ItemStack[] items = new ItemStack[9];
+private ItemStack anItemStack;
 private ItemStackHandler handler;	
 private boolean isFormed = false;
 	public TileEntityMobChamber() {
@@ -128,12 +129,36 @@ private boolean isFormed = false;
 		@Override
 		public ItemStack getStackInSlot(int index) {
 		
-			return items[index];
+			  if (index < 0 || index >= this.getSizeInventory())
+		            return null;
+		        return this.items[index];
 		}
 		@Override
 		public ItemStack decrStackSize(int index, int count) {
-	
-			return null;
+		     ItemStack itemstack;
+		     if (this.getStackInSlot(index) != null) {
+	            if (this.getStackInSlot(index).stackSize <= count) {
+	            	anItemStack = this.getStackInSlot(index);
+	                this.setInventorySlotContents(index, null);
+	                this.markDirty();
+	                return anItemStack;
+	            } else {
+	            	anItemStack = this.getStackInSlot(index).splitStack(count);
+
+	                if (this.getStackInSlot(index).stackSize <= 0) {
+	                    this.setInventorySlotContents(index, null);
+	                } else {
+	                    //Just to show that changes happened
+	                    this.setInventorySlotContents(index, this.getStackInSlot(index));
+	                }
+	            
+	            }    
+	            this.markDirty();
+		     }
+	                return anItemStack;
+	            
+		     
+		
 		}
 		@Override
 		public ItemStack removeStackFromSlot(int index) {
@@ -142,8 +167,17 @@ private boolean isFormed = false;
 		}
 		@Override
 		public void setInventorySlotContents(int index, ItemStack stack) {
-			
-			
+			  if (index < 0 || index >= this.getSizeInventory())
+		            return;
+
+		        if (stack != null && stack.stackSize > this.getInventoryStackLimit())
+		            stack.stackSize = this.getInventoryStackLimit();
+
+		        if (stack != null && stack.stackSize == 0)
+		            stack = null;
+
+		        this.items[index] = stack;
+		        this.markDirty();
 		}
 		@Override
 		public int getInventoryStackLimit() {
@@ -168,7 +202,7 @@ private boolean isFormed = false;
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
 		
-			return false;
+			return true;
 		}
 		@Override
 		public int getField(int id) {
@@ -185,11 +219,11 @@ private boolean isFormed = false;
 		
 			return 0;
 		}
-		@Override
-		public void clear() {
-		
-			
-		}
+		   @Override
+		    public void clear(){
+		        for (int i = 0; i < this.getSizeInventory(); i++)
+		            this.setInventorySlotContents(i, null);
+		    }
 	}
 
 	
