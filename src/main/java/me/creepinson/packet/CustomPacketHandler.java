@@ -18,7 +18,7 @@ public class CustomPacketHandler implements IMessageHandler<CustomPacket, IMessa
 	public IMessage onMessage(CustomPacket message, MessageContext ctx) {
 
 		EntityPlayerMP serverPlayer = ctx.getServerHandler().playerEntity;
-		int amount = message.toSend;	
+		
 	
 		   BlockMobChamber.buildMob(	message.poser, serverPlayer.worldObj, serverPlayer);
 		return null;
