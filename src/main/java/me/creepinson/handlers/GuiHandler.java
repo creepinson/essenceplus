@@ -25,7 +25,7 @@ public class GuiHandler implements IGuiHandler{
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		if(ID == MOB_CHAMBER){
-			return new GuiMobChamber(player.inventory, (TileEntityMobChamber) world.getTileEntity(new BlockPos(x, y, z)));
+			return new GuiMobChamber();
 		}
 	return null;
 	

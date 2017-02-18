@@ -9,22 +9,17 @@ import me.creepinson.lib.RefStrings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.inventory.GuiBeacon;
-import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.CommandBlockBaseLogic;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 
-public class GuiMobChamber extends GuiContainer
+public class GuiMobChamber extends GuiScreen
 {
 
 	private TileEntityMobChamber te; 
@@ -33,7 +28,7 @@ public class GuiMobChamber extends GuiContainer
     private ContainerMobChamber cmb;
     public void initGui()
     {
-    this.startButton = this.addButton(new GuiButton(0, 5, 10, "Start"));
+    this.startButton = this.addButton(new GuiButton(0, 128, 128, "Build Mob"));
     
     
     }
@@ -54,34 +49,27 @@ public class GuiMobChamber extends GuiContainer
                
             }
     }
-    public GuiMobChamber(IInventory playerInv, TileEntityMobChamber te){
+    public GuiMobChamber(){
 		
 		
-		super(new ContainerMobChamber(playerInv, te));
 		
-		this.xSize = 176;
-		this.ySize = 166;
-		this.playerInv = playerInv;
-		this.te = te;
+		this.width = 176;
+		this.height = 166;
+	
 		
 	}
 
-	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		
 		
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-		this.mc.getTextureManager().bindTexture(new ResourceLocation(RefStrings.MODID, "textures/gui/container/MobChamber.png"));
-	    this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
-	
-	
+		
+	  
 	}
-	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		String s = I18n.format("container.mobchamber"); //Gets the formatted name for the block breaker from the language file - NOTE ADD "container.block_breaker=Block Breaker" to the language file (without quotes) and then delete this note
-		this.mc.fontRendererObj.drawString(s, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s) / 2, 6, 4210752); //Draws the block breaker name in the center on the top of the gui
-		this.mc.fontRendererObj.drawString(this.playerInv.getDisplayName().getFormattedText(), 8, 72, 4210752); //The player's inventory name
-		super.drawGuiContainerForegroundLayer(mouseX, mouseY);
+		String s = I18n.format("gui.mobchamber"); //Gets the formatted name for the block breaker from the language file - NOTE ADD "container.block_breaker=Block Breaker" to the language file (without quotes) and then delete this note
+		this.mc.fontRendererObj.drawString(s, this.width / 2 - this.mc.fontRendererObj.getStringWidth(s) / 2, 6, 4210752); //Draws the block breaker name in the center on the top of the gui
+		
 	}
 	
 	
