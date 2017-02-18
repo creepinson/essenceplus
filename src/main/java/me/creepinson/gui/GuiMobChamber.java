@@ -42,11 +42,14 @@ public class GuiMobChamber extends GuiScreen
             	 -- te.items[0].stackSize;
                	 -- te.items[1].stackSize;
                	 -- te.items[2].stackSize;
+                 this.mc.displayGuiScreen((GuiScreen)null);
              }
              else{
             	 player.addChatComponentMessage(new TextComponentString(TextFormatting.RED + "Invalid Recipe/No Recipe!"));
+            	   this.mc.displayGuiScreen((GuiScreen)null);
              }
-               
+          
+             
             }
     }
     public GuiMobChamber(){
