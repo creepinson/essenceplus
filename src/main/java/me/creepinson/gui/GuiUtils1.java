@@ -31,8 +31,11 @@ public class GuiUtils1 extends GuiScreen
 this.te = new TileEntityMobChamber();
     
     }
-    public static void spawnParticleNote(World world, EntityPlayer player, BlockPos pos) {
+    public static void spawnParticleNote(EntityPlayer player) {
+  
     	
+     	World world = player.worldObj ;
+    	BlockPos pos;
     	
     	world.spawnParticle(EnumParticleTypes.NOTE,player.posX,player.posY, player.posZ, 5, 5, 5);
     	
@@ -57,10 +60,10 @@ this.te = new TileEntityMobChamber();
 
     protected void actionPerformed(GuiButton button) throws IOException
     {
-   
+  EntityPlayer player = mc.thePlayer;
             if (button.id == 0)
             {
-            	this.spawnParticleNote(null, null, null);
+            	this.spawnParticleNote(player);
             	
            //  if(ItemStack.areItemsEqual(te.items[0], new ItemStack(ItemHandler.FireCore)) && ItemStack.areItemsEqual(te.items[1], new ItemStack(Items.EGG))){
            

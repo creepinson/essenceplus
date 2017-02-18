@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 import me.creepinson.Main.Main;
 import me.creepinson.entities.TileEntityMobChamber;
 import me.creepinson.handlers.GuiHandler;
+import me.creepinson.handlers.ItemHandler;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -14,7 +15,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -98,13 +101,28 @@ public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 }
 
 public static void buildMob(BlockPos pos, World world, EntityPlayer player) {
-
+	
 BlockPos posmain = pos.up(1);
 if(world.getTileEntity(posmain) instanceof TileEntityChest){
+	 TileEntityChest chest = null;
+	 chest = (TileEntityChest) world.getTileEntity(posmain);
+	 IInventory chestInv = (IInventory) chest;
 
-	player.addChatComponentMessage(new TextComponentString(TextFormatting.GREEN + "You Called a Packet Succcesfully!"));
-	
+	 
+
+		 player.addChatComponentMessage(new TextComponentString(TextFormatting.GREEN + "You Called a Packet Succcesfully!"));
+    
+	 
+		
+				
+				
+			
+				
+				
 }
+	 
+	 
+
 	
 else{
 	

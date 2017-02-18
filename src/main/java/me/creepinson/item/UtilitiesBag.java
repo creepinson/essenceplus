@@ -20,9 +20,9 @@ public class UtilitiesBag extends ModItems{
 
 	{
 	 
-		 if(!world.isRemote){
+		 
 			 user.openGui(Main.instance, GuiHandler.UTILS_1, world, (int) user.posX,  (int) user.posY,  (int) user.posZ);
-		 }
+		 
 		
 		
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
