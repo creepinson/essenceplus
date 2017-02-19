@@ -128,19 +128,20 @@ ArrayList<ItemStack> checkie = new ArrayList<ItemStack>();
 boolean cResult = BlockMobChamber.check(mutantzombie_4l, stackie);
 	
 			if(cResult == true){
-				checkie.add(stackie);
-			
-		}
+				  for(int k = 0; i < checkie.size(); k++){
+					  BlockMobChamber.check(checkie, stackie);
+				  }
+			}
+}
+	}
 		
 	}
 	 
 		 
-	{
+	
 				 
-	}
-	}
-
-			  }
+	
+			  
 	 
 	 
 					
