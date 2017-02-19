@@ -130,17 +130,9 @@ if(world.getTileEntity(posmain) instanceof TileEntityChest){
 --meep.stackSize;
 
 			  }
-			  else{
-
-					player.addChatComponentMessage(new TextComponentString(TextFormatting.RED + "ACTION FAILED..."));
-
-				}
+			  
 	 }
-		 else{
-
-				player.addChatComponentMessage(new TextComponentString(TextFormatting.RED + "ACTION FAILED..."));
-
-			}
+					
 	 }	
 	 
 }
