@@ -33,6 +33,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -117,25 +118,41 @@ public static void buildMob(BlockPos pos, World world, EntityPlayer player) {
 			mutantzombie_4l.add(new ItemStack(ItemHandler.Syringe, 1, 1));
 			BlockPos posmain = pos.up(1);
 	TileEntity tet =  world.getTileEntity(posmain);
-TileEntityChest tec = new TileEntityChest();
+
 
 ArrayList<ItemStack> checkie = new ArrayList<ItemStack>();
 
-	for (int i = 0; i < tec.getSizeInventory(); i++) {{
+	for (int i = 0; i < ((TileEntityChest) tet).getSizeInventory(); i++) {
 		
-		ItemStack stackie = tec.getStackInSlot(i);
+		ItemStack stackie = ((TileEntityChest) tet).getStackInSlot(i);
 		
 boolean cResult = BlockMobChamber.check(mutantzombie_4l, stackie);
-	
-			if(cResult == true){
-				  for(int k = 0; i < checkie.size(); k++){
-					  BlockMobChamber.check(checkie, stackie);
-				  }
-			}
+if(cResult == true){
+	  checkie.add(stackie);
 }
-	}
+			
+}
+
+	  for(int k = 0; k < mutantzombie_4l.size(); k++){
+		ItemStack me = mutantzombie_4l.get(k);
+		boolean cMeep = BlockMobChamber.check(checkie, me);
+	 if(cMeep == true){
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.RED + "Action Successfull..."));
+		  
+	 }
+	 
+	 else if(cMeep == false){
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.RED + "Action Failed..."));
+		 	 }
+	  }
+			 
 		
-	}
+			
+		  }
+	 
+	
+		
+	
 	 
 		 
 	
