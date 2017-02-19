@@ -115,7 +115,6 @@ public static void buildMob(BlockPos pos, World world, EntityPlayer player, Item
 
 	BlockPos posmain = pos.up(1);
 	TileEntity tec =  world.getTileEntity(posmain);
-	
 
 	 
 	
@@ -140,28 +139,15 @@ public static void buildMob(BlockPos pos, World world, EntityPlayer player, Item
 
 
 
-
 public static boolean check(ArrayList<ItemStack> mutantzombie_4l,  ItemStack meep)
 {
-	
     for(int i = 0; i < mutantzombie_4l.size(); i++)
     {
         if(ItemStack.areItemStacksEqual(mutantzombie_4l.get(i), meep))
         {
             return true;
         }
-        
-
-    if(!ItemStack.areItemStacksEqual(mutantzombie_4l.get(i), meep)){
-        return 	false;
     }
-    }
-return false;
+    return false;
 }
-
 }
-
-
-
-
-
