@@ -1,5 +1,7 @@
 package me.creepinson.blocks;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import javax.annotation.Nullable;
@@ -15,10 +17,13 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.ContainerChest;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityChest;
@@ -38,15 +43,19 @@ import net.minecraftforge.items.IItemHandler;
 public class BlockMobChamber extends ModBlocks implements ITileEntityProvider
 
 {
-	
+static ArrayList<ItemStack> mutantzombie_4l = new ArrayList<ItemStack>();
+
 	public BlockMobChamber(Material mat, String name, CreativeTabs tab, float hardness, float resistance, int harvest, String tool) {
 		 
 		super(mat, tool, tab, resistance, resistance);
 		 this.setUnlocalizedName("MobChamber");
 	        this.setHardness(2.0f);
 	        this.setResistance(6.0f);
-
-	
+	       
+	       
+	       
+	       
+	       
 		 }
 
    @Override
@@ -99,37 +108,47 @@ public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 	}
 	super.breakBlock(worldIn, pos, state);
 }
-
+private static List<ItemStack> chestInv = new ArrayList<ItemStack>();
 public static void buildMob(BlockPos pos, World world, EntityPlayer player) {
+	TileEntityChest inventoryC = new TileEntityChest();
 	
-BlockPos posmain = pos.up(1);
+	BlockPos posmain = pos.up(1);
 if(world.getTileEntity(posmain) instanceof TileEntityChest){
-	 TileEntityChest chest = null;
-	 chest = (TileEntityChest) world.getTileEntity(posmain);
-	 IInventory chestInv = (IInventory) chest;
+
 
 	 
+	 for (int i = 0; i < inventoryC.getSizeInventory(); i++)
+	 {
+	
+	       
+		 ItemStack meep = inventoryC.getStackInSlot(i);
+		 if (meep == null) {
+			  mutantzombie_4l.add(meep);
+			  if(mutantzombie_4l.contains(new ItemStack(Items.EGG, 1)) && mutantzombie_4l.contains(new ItemStack(ItemHandler.Syringe, 1, 1)) && mutantzombie_4l.contains(new ItemStack(Items.BONE, 2)))
+			  {
+				  player.addChatComponentMessage(new TextComponentString(TextFormatting.GREEN + "You Called a Packet Succcesfully!"));
+--meep.stackSize;
 
-		 player.addChatComponentMessage(new TextComponentString(TextFormatting.GREEN + "You Called a Packet Succcesfully!"));
-    
+			  }
+			  else{
+
+					player.addChatComponentMessage(new TextComponentString(TextFormatting.RED + "ACTION FAILED..."));
+
+				}
+	 }
+		 else{
+
+				player.addChatComponentMessage(new TextComponentString(TextFormatting.RED + "ACTION FAILED..."));
+
+			}
+	 }	
 	 
-		
-				
-				
-			
-				
-				
 }
-	 
-	 
-
 	
 else{
-	
-	
+
 	player.addChatComponentMessage(new TextComponentString(TextFormatting.RED + "ACTION FAILED..."));
-	
-	
+
 }
 }
 
