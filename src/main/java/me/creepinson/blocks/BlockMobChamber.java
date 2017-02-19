@@ -119,13 +119,18 @@ public static void buildMob(BlockPos pos, World world, EntityPlayer player) {
 	TileEntity tet =  world.getTileEntity(posmain);
 TileEntityChest tec = new TileEntityChest();
 
-	
+ArrayList<ItemStack> checkie = new ArrayList<ItemStack>();
+
 	for (int i = 0; i < tec.getSizeInventory(); i++) {{
 		
 		ItemStack stackie = tec.getStackInSlot(i);
 		
-		BlockMobChamber.check(mutantzombie_4l, stackie);
-		
+boolean cResult = BlockMobChamber.check(mutantzombie_4l, stackie);
+	
+			if(cResult == true){
+				checkie.add(stackie);
+			
+		}
 		
 	}
 	 
