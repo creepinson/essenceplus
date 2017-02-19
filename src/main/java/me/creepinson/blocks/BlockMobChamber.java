@@ -126,14 +126,12 @@ if(tec instanceof TileEntityChest){
 		 ItemStack meep = ((TileEntityChest) tec).getStackInSlot(i);
 		 if(meep != null)
 		 {
-			 
+			 check(mutantzombie_4l, meep);
 			 
 		 
-			  mutantzombie_4l.add(meep);
-			  if(mutantzombie_4l.contains(new ItemStack(Items.EGG, 1)) && mutantzombie_4l.contains(new ItemStack(ItemHandler.Syringe, 1, 1)) && mutantzombie_4l.contains(new ItemStack(Items.BONE, 2)))
-			  {
+	{
 				  player.addChatComponentMessage(new TextComponentString(TextFormatting.GREEN + "You Called a Packet Succcesfully!"));
---meep.stackSize;
+
 
 			  }
 	 }  
@@ -148,6 +146,25 @@ else{
 
 }
 }
+
+public static boolean check( ArrayList<ItemStack> mutantzombie_4l,  ItemStack meep){
+
+	
+	for(int i = 0; i < mutantzombie_4l.size(); i++){
+		
+		  if(mutantzombie_4l.contains(new ItemStack(Items.EGG, 1)) && mutantzombie_4l.contains(new ItemStack(ItemHandler.Syringe, 1, 1)) && mutantzombie_4l.contains(new ItemStack(Items.BONE, 2)));
+
+if(check(mutantzombie_4l, new ItemStack(Items.EGG, 1)) && check(mutantzombie_4l, new ItemStack(ItemHandler.Syringe, 1, 1)) && check(mutantzombie_4l, new ItemStack(Items.BONE, 2))){
+	
+	return true;
+	}
+
+	}
+	return false;
+	
+}
+
+
 
 }
 
