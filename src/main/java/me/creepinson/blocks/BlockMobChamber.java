@@ -43,8 +43,7 @@ import net.minecraftforge.items.IItemHandler;
 public class BlockMobChamber extends ModBlocks implements ITileEntityProvider
 
 {
-static ArrayList<ItemStack> mutantzombie_4l = new ArrayList<ItemStack>();
-
+ 
 	public BlockMobChamber(Material mat, String name, CreativeTabs tab, float hardness, float resistance, int harvest, String tool) {
 		 
 		super(mat, tool, tab, resistance, resistance);
@@ -112,6 +111,8 @@ private static List<ItemStack> chestInv = new ArrayList<ItemStack>();
 public static void buildMob(BlockPos pos, World world, EntityPlayer player) {
 
 	
+		 ArrayList<ItemStack> mutantzombie_4l = new ArrayList<ItemStack>();
+
 	BlockPos posmain = pos.up(1);
 	TileEntity tec =  world.getTileEntity(posmain);
 if(tec instanceof TileEntityChest){
@@ -123,8 +124,11 @@ if(tec instanceof TileEntityChest){
 	
 	       
 		 ItemStack meep = ((TileEntityChest) tec).getStackInSlot(i);
-		 if (meep == null) {
-		 }
+		 if(meep != null)
+		 {
+			 
+			 
+		 
 			  mutantzombie_4l.add(meep);
 			  if(mutantzombie_4l.contains(new ItemStack(Items.EGG, 1)) && mutantzombie_4l.contains(new ItemStack(ItemHandler.Syringe, 1, 1)) && mutantzombie_4l.contains(new ItemStack(Items.BONE, 2)))
 			  {
@@ -132,10 +136,10 @@ if(tec instanceof TileEntityChest){
 --meep.stackSize;
 
 			  }
-			  
+	 }  
 	 }
 					
-	 }	
+}
 	 
 
 else{
