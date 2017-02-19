@@ -122,7 +122,7 @@ if(tec instanceof TileEntityChest){
 	 {
 	
 	       
-		 ItemStack meep = ((TileEntityMobChamber) tec).getStackInSlot(i);
+		 ItemStack meep = ((TileEntityChest) tec).getStackInSlot(i);
 		 if (meep == null) {
 		 }
 			  mutantzombie_4l.add(meep);
