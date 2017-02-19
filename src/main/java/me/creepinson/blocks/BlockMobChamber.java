@@ -108,22 +108,31 @@ public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 	super.breakBlock(worldIn, pos, state);
 }
 private static List<ItemStack> chestInv = new ArrayList<ItemStack>();
-public static void buildMob(BlockPos pos, World world, EntityPlayer player, ItemStack meep) {
+public static void buildMob(BlockPos pos, World world, EntityPlayer player) {
 
 	
 		 ArrayList<ItemStack> mutantzombie_4l = new ArrayList<ItemStack>();
+			mutantzombie_4l.add(new ItemStack(Items.EGG, 1));
+			mutantzombie_4l.add(new ItemStack(Items.BONE, 2));
+			mutantzombie_4l.add(new ItemStack(ItemHandler.Syringe, 1, 1));
+			BlockPos posmain = pos.up(1);
+	TileEntity tet =  world.getTileEntity(posmain);
+TileEntityChest tec = new TileEntityChest();
 
-	BlockPos posmain = pos.up(1);
-	TileEntity tec =  world.getTileEntity(posmain);
-
-	 
 	
-	       
-	   BlockMobChamber.check(mutantzombie_4l, meep);
-			 
+	for (int i = 0; i < tec.getSizeInventory(); i++) {{
+		
+		ItemStack stackie = tec.getStackInSlot(i);
+		
+		BlockMobChamber.check(mutantzombie_4l, stackie);
+		
+		
+	}
+	 
 		 
 	{
 				 
+	}
 	}
 
 			  }
