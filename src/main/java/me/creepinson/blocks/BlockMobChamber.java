@@ -110,19 +110,21 @@ public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 }
 private static List<ItemStack> chestInv = new ArrayList<ItemStack>();
 public static void buildMob(BlockPos pos, World world, EntityPlayer player) {
-	TileEntityChest inventoryC = new TileEntityChest();
+
 	
 	BlockPos posmain = pos.up(1);
-if(world.getTileEntity(posmain) instanceof TileEntityChest){
+	TileEntity tec =  world.getTileEntity(posmain);
+if(tec instanceof TileEntityChest){
 
 
 	 
-	 for (int i = 0; i < inventoryC.getSizeInventory(); i++)
+	 for (int i = 0; i < ((TileEntityChest) tec).getSizeInventory(); i++)
 	 {
 	
 	       
-		 ItemStack meep = inventoryC.getStackInSlot(i);
+		 ItemStack meep = ((TileEntityMobChamber) tec).getStackInSlot(i);
 		 if (meep == null) {
+		 }
 			  mutantzombie_4l.add(meep);
 			  if(mutantzombie_4l.contains(new ItemStack(Items.EGG, 1)) && mutantzombie_4l.contains(new ItemStack(ItemHandler.Syringe, 1, 1)) && mutantzombie_4l.contains(new ItemStack(Items.BONE, 2)))
 			  {
@@ -135,8 +137,7 @@ if(world.getTileEntity(posmain) instanceof TileEntityChest){
 					
 	 }	
 	 
-}
-	
+
 else{
 
 	player.addChatComponentMessage(new TextComponentString(TextFormatting.RED + "ACTION FAILED..."));
