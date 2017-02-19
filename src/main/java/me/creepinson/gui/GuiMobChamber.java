@@ -14,6 +14,8 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.init.PotionTypes;
 import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -31,12 +33,10 @@ public class GuiMobChamber extends GuiScreen
     private ContainerMobChamber cmb;
     public void initGui()
     {
-    this.buildMob = this.addButton(new GuiButton(0, 0, 0, "Build Mob"));
+    this.buildMob = this.addButton(new GuiButton(0, 0, 50, "Build Mob"));
     
 this.te = new TileEntityMobChamber();
-    
     }
-    
             //	 player.addChatComponentMessage(new TextComponentString(TextFormatting.RED + "Invalid Recipe/No Recipe/No Chest!"));
             	//
             // }

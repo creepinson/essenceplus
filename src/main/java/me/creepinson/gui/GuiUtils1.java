@@ -4,17 +4,20 @@ import java.io.IOException;
 
 import me.creepinson.container.ContainerMobChamber;
 import me.creepinson.entities.TileEntityMobChamber;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IContainerListener;
+import net.minecraft.init.Items;
+import net.minecraft.init.PotionTypes;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.client.event.GuiScreenEvent.PotionShiftEvent;
 
 public class GuiUtils1 extends GuiScreen
 {
@@ -37,8 +40,11 @@ this.te = new TileEntityMobChamber();
      	World world = player.worldObj ;
     	BlockPos pos;
     	
-    	world.spawnParticle(EnumParticleTypes.NOTE,player.posX,player.posY, player.posZ, 5, 5, 5);
-    	
+    	 ItemStack testStack = new ItemStack(Items.CHICKEN);
+ player.inventory.addItemStackToInventory(testStack);
+
+    }
+   
     	//if(te != null && te instanceof TileEntityChest){
     	  //  for (int i = 0; i < ((TileEntityChest) te).getSizeInventory(); ++i){
     	    //    System.out.println(((TileEntityChest) te).getStackInSlot(i));
@@ -53,7 +59,7 @@ this.te = new TileEntityMobChamber();
             //	 player.addChatComponentMessage(new TextComponentString(TextFormatting.RED + "Invalid Recipe/No Recipe/No Chest!"));
             	//
             // }
-    }
+    
     	    
    
 
