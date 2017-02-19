@@ -43,8 +43,8 @@ this.te = new TileEntityMobChamber();
     
     	    
    
-
-protected void actionPerformed(GuiButton button, ItemStack meep) throws IOException
+    ItemStack meep;
+protected void actionPerformed(GuiButton button) throws IOException
     {
 	ArrayList<ItemStack> mutantzombie_4l = new ArrayList<ItemStack>();
 

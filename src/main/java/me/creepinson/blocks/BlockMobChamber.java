@@ -149,9 +149,15 @@ public static boolean check(ArrayList<ItemStack> mutantzombie_4l,  ItemStack mee
         {
             return true;
         }
+        
+
+    if(!ItemStack.areItemStacksEqual(mutantzombie_4l.get(i), meep)){
+        return 	false;
     }
-    return false;
+    }
+return false;
 }
+
 }
 
 
