@@ -115,7 +115,6 @@ public static void buildMob(BlockPos pos, World world, EntityPlayer player) {
 
 	BlockPos posmain = pos.up(1);
 	TileEntity tec =  world.getTileEntity(posmain);
-if(tec instanceof TileEntityChest){
 
 
 	 
@@ -124,27 +123,27 @@ if(tec instanceof TileEntityChest){
 	
 	       
 		 ItemStack meep = ((TileEntityChest) tec).getStackInSlot(i);
-		 if(meep != null)
+			if(ItemStack.areItemsEqual(meep, new ItemStack(Items.EGG, 1)) && ItemStack.areItemsEqual(meep, new ItemStack(Items.BONE, 2)) && ItemStack.areItemsEqual(meep, new ItemStack(ItemHandler.Syringe, 1, 1))){
 		 {
 			 check(mutantzombie_4l, meep);
 			 
 		 
 	{
 				  player.addChatComponentMessage(new TextComponentString(TextFormatting.GREEN + "You Called a Packet Succcesfully!"));
-
+	}
 
 			  }
 	 }  
 	 }
 					
-}
+
 	 
 
-else{
 
-	player.addChatComponentMessage(new TextComponentString(TextFormatting.RED + "ACTION FAILED..."));
 
-}
+	
+
+
 }
 
 public static boolean check( ArrayList<ItemStack> mutantzombie_4l,  ItemStack meep){
@@ -152,10 +151,9 @@ public static boolean check( ArrayList<ItemStack> mutantzombie_4l,  ItemStack me
 	
 	for(int i = 0; i < mutantzombie_4l.size(); i++){
 		
-		  if(mutantzombie_4l.contains(new ItemStack(Items.EGG, 1)) && mutantzombie_4l.contains(new ItemStack(ItemHandler.Syringe, 1, 1)) && mutantzombie_4l.contains(new ItemStack(Items.BONE, 2)));
 
 if(check(mutantzombie_4l, new ItemStack(Items.EGG, 1)) && check(mutantzombie_4l, new ItemStack(ItemHandler.Syringe, 1, 1)) && check(mutantzombie_4l, new ItemStack(Items.BONE, 2))){
-	
+
 	return true;
 	}
 
