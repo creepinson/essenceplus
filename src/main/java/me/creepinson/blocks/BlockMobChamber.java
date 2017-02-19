@@ -108,7 +108,7 @@ public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 	super.breakBlock(worldIn, pos, state);
 }
 private static List<ItemStack> chestInv = new ArrayList<ItemStack>();
-public static void buildMob(BlockPos pos, World world, EntityPlayer player) {
+public static void buildMob(BlockPos pos, World world, EntityPlayer player, ItemStack meep) {
 
 	
 		 ArrayList<ItemStack> mutantzombie_4l = new ArrayList<ItemStack>();
@@ -118,23 +118,18 @@ public static void buildMob(BlockPos pos, World world, EntityPlayer player) {
 
 
 	 
-	 for (int i = 0; i < ((TileEntityChest) tec).getSizeInventory(); i++)
-	 {
 	
 	       
-		 ItemStack meep = ((TileEntityChest) tec).getStackInSlot(i);
-			if(ItemStack.areItemsEqual(meep, new ItemStack(Items.EGG, 1)) && ItemStack.areItemsEqual(meep, new ItemStack(Items.BONE, 2)) && ItemStack.areItemsEqual(meep, new ItemStack(ItemHandler.Syringe, 1, 1))){
-		 {
-			 check(mutantzombie_4l, meep);
+	   BlockMobChamber.check(mutantzombie_4l, meep);
 			 
 		 
 	{
-				  player.addChatComponentMessage(new TextComponentString(TextFormatting.GREEN + "You Called a Packet Succcesfully!"));
+				 
 	}
 
 			  }
-	 }  
-	 }
+	 
+	 
 					
 
 	 
@@ -144,26 +139,22 @@ public static void buildMob(BlockPos pos, World world, EntityPlayer player) {
 	
 
 
+
+
+public static boolean check(ArrayList<ItemStack> mutantzombie_4l,  ItemStack meep)
+{
+    for(int i = 0; i < mutantzombie_4l.size(); i++)
+    {
+        if(ItemStack.areItemStacksEqual(mutantzombie_4l.get(i), meep))
+        {
+            return true;
+        }
+    }
+    return false;
 }
-
-public static boolean check( ArrayList<ItemStack> mutantzombie_4l,  ItemStack meep){
-
-	
-	for(int i = 0; i < mutantzombie_4l.size(); i++){
-		
-
-if(check(mutantzombie_4l, new ItemStack(Items.EGG, 1)) && check(mutantzombie_4l, new ItemStack(ItemHandler.Syringe, 1, 1)) && check(mutantzombie_4l, new ItemStack(Items.BONE, 2))){
-
-	return true;
-	}
-
-	}
-	return false;
-	
 }
 
 
 
-}
 
 

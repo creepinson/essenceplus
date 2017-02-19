@@ -1,5 +1,7 @@
 package me.creepinson.packet;
 
+import java.util.ArrayList;
+
 import me.creepinson.blocks.BlockMobChamber;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
@@ -18,9 +20,12 @@ public class CustomPacketHandler implements IMessageHandler<CustomPacket, IMessa
 	public IMessage onMessage(CustomPacket message, MessageContext ctx) {
 
 		EntityPlayerMP serverPlayer = ctx.getServerHandler().playerEntity;
+		BlockMobChamber bmc;
+		ItemStack meep;
+		 ArrayList<ItemStack> mutantzombie_4l = new ArrayList<ItemStack>();
+
 		
-	
-		   BlockMobChamber.buildMob(	message.poser, serverPlayer.worldObj, serverPlayer);
+
 		return null;
 	}
 

@@ -1,6 +1,7 @@
 package me.creepinson.gui;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import me.creepinson.Main.CommonProxy;
 import me.creepinson.blocks.BlockMobChamber;
@@ -15,6 +16,7 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -42,13 +44,13 @@ this.te = new TileEntityMobChamber();
     	    
    
 
-@Override
-    protected void actionPerformed(GuiButton button) throws IOException
+protected void actionPerformed(GuiButton button, ItemStack meep) throws IOException
     {
-   
+	ArrayList<ItemStack> mutantzombie_4l = new ArrayList<ItemStack>();
+
             if (button.id == 0)
             {
-            	CommonProxy.INSTANCE.sendToServer(new CustomPacket(posy));
+            	BlockMobChamber.check(mutantzombie_4l, meep);
             	
            //  if(ItemStack.areItemsEqual(te.items[0], new ItemStack(ItemHandler.FireCore)) && ItemStack.areItemsEqual(te.items[1], new ItemStack(Items.EGG))){
            
