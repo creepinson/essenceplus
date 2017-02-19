@@ -23,7 +23,7 @@ public class CustomPacketHandler implements IMessageHandler<CustomPacket, IMessa
 		BlockMobChamber bmc;
 		ItemStack meep;
 		 ArrayList<ItemStack> mutantzombie_4l = new ArrayList<ItemStack>();
-
+BlockMobChamber.buildMob(message.poser, serverPlayer.worldObj, serverPlayer, message.meep);
 		
 
 		return null;

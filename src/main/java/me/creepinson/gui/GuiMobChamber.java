@@ -50,7 +50,7 @@ protected void actionPerformed(GuiButton button) throws IOException
 
             if (button.id == 0)
             {
-            	BlockMobChamber.check(mutantzombie_4l, meep);
+            	CommonProxy.INSTANCE.sendToServer(new CustomPacket(posy, meep));
             	
            //  if(ItemStack.areItemsEqual(te.items[0], new ItemStack(ItemHandler.FireCore)) && ItemStack.areItemsEqual(te.items[1], new ItemStack(Items.EGG))){
            

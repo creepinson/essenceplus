@@ -1,14 +1,16 @@
 package me.creepinson.packet;
 
 import io.netty.buffer.ByteBuf;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 
 public class CustomPacket implements IMessage{
 	 public static BlockPos poser;
+	public  ItemStack meep;
 	// A default constructor is always required
-	  public CustomPacket(BlockPos pos){
-		  
+	  public CustomPacket(BlockPos pos, ItemStack meep){
+		  this.meep = meep;
 		  this.poser = pos;
 	  }
 	 

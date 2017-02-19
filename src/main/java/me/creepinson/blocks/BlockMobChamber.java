@@ -115,7 +115,7 @@ public static void buildMob(BlockPos pos, World world, EntityPlayer player, Item
 
 	BlockPos posmain = pos.up(1);
 	TileEntity tec =  world.getTileEntity(posmain);
-
+	
 
 	 
 	
