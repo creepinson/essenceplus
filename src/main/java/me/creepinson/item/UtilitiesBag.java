@@ -1,6 +1,6 @@
 package me.creepinson.item;
 
-import me.creepinson.Main.Main;
+import me.creepinson.main.Main;
 import me.creepinson.handlers.GuiHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;

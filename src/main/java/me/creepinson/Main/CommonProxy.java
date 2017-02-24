@@ -1,4 +1,4 @@
-package me.creepinson.Main;
+package me.creepinson.main;
 
 import me.creepinson.entities.TileEntityMobChamber;
 import me.creepinson.handlers.BlockHandler;

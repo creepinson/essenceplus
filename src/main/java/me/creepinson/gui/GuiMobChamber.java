@@ -3,25 +3,17 @@ package me.creepinson.gui;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import me.creepinson.Main.CommonProxy;
-import me.creepinson.blocks.BlockMobChamber;
+import me.creepinson.main.CommonProxy;
 import me.creepinson.container.ContainerMobChamber;
 import me.creepinson.entities.TileEntityMobChamber;
 import me.creepinson.packet.CustomPacket;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.init.PotionTypes;
-import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 public class GuiMobChamber extends GuiScreen
 {

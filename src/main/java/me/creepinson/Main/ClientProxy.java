@@ -1,4 +1,4 @@
-package me.creepinson.Main;
+package me.creepinson.main;
 
 import me.creepinson.handlers.BlockHandler;
 import me.creepinson.handlers.GuiHandler;

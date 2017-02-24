@@ -6,33 +6,25 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import me.creepinson.Main.Main;
+import me.creepinson.main.Main;
 import me.creepinson.entities.TileEntityMobChamber;
 import me.creepinson.handlers.GuiHandler;
 import me.creepinson.handlers.ItemHandler;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.inventory.ContainerChest;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
@@ -137,13 +129,41 @@ if(cResult == true){
 		ItemStack me = mutantzombie_4l.get(k);
 		boolean cMeep = BlockMobChamber.check(checkie, me);
 	 if(cMeep == true){
-		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.RED + "Action Successfull..."));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.GREEN + "Building Mob"));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.BLUE + "."));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.BLUE + ".."));	
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.BLUE + "..."));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.BLUE + "...."));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.BLUE + "....."));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.GREEN + "                          "));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.GREEN + "                          "));
+		 
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.GREEN + "Built Mob Successfully"));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.GREEN + "                          "));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.GREEN + "                          "));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.GREEN + "Spawning Mob"));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.BLUE + "."));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.BLUE + ".."));	
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.BLUE + "..."));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.BLUE + "...."));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.BLUE + "....."));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.BLUE + "......"));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.GREEN + "                          "));
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.GREEN + "                          "));
+			
 		  
+		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.GREEN + "Built and Spawned Mob Successfully!"));
+		world.spawnEntityInWorld(player);
+	EntityZombie zombie = new EntityZombie(world);
+	BlockPos mob = posmain.up(1);
+	zombie.setPositionAndUpdate(mob.getX(), mob.getY(), mob.getZ());
+		world.spawnEntityInWorld(zombie);
 	 }
 	 
 	 else if(cMeep == false){
 		 player.addChatComponentMessage(new TextComponentTranslation(TextFormatting.RED + "Action Failed..."));
-		 	 }
+	return;	 	
+	 }
 	  }
 			 
 		

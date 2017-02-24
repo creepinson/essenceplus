@@ -1,21 +1,10 @@
-package me.creepinson.Main;
+package me.creepinson.main;
 
 
-import jline.internal.Log;
 import me.creepinson.handlers.EventHandlerMOD;
-import me.creepinson.handlers.ItemHandler;
 import me.creepinson.handlers.MobDropsHandler;
-import me.creepinson.item.FireCore;
-import me.creepinson.item.FireEssence;
 import me.creepinson.lib.IProxy;
 import me.creepinson.lib.RefStrings;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;

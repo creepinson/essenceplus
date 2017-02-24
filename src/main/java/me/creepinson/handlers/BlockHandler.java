@@ -15,7 +15,8 @@ public class BlockHandler {
 	public static ItemBlock MobChamberCore;
 	public static Block BlockMobChamber;
 	public static ItemBlock MobChamber;
-	
+	public static Block BlockPedastal_Magic;
+	public static ItemBlock Pedastal_Magic;
 	
 	public static void init(){
 	 
@@ -26,6 +27,10 @@ public class BlockHandler {
 	    BlockMobChamberCore = new me.creepinson.blocks.BlockMobChamberCore(Material.ROCK, "MobChamberCore", CreativeTabs.BUILDING_BLOCKS, 5F, 15F, 3, "pickaxe");
 		  
 	    MobChamberCore = (ItemBlock) new ItemBlock(BlockMobChamberCore);
+
+	    BlockPedastal_Magic = new me.creepinson.blocks.Pedastal_Magic(Material.ROCK, "pedastal_magic", CreativeTabs.BUILDING_BLOCKS, 5F, 15F, 3, "pedastal_magic");
+		  
+	    Pedastal_Magic = (ItemBlock) new ItemBlock(BlockPedastal_Magic);
 	
 	    
 	}
@@ -36,13 +41,17 @@ public class BlockHandler {
 		  GameRegistry.register(MobChamber, BlockMobChamber.getRegistryName());
 		  GameRegistry.register(BlockMobChamberCore);
 		  GameRegistry.register(MobChamberCore, BlockMobChamberCore.getRegistryName());
+		  GameRegistry.register(BlockPedastal_Magic);
+		  GameRegistry.register(Pedastal_Magic, BlockPedastal_Magic.getRegistryName());
 	 
+		  
 	 }
 	 
 	 public static void registerRenders(){
 	 
 		 registerRender(BlockMobChamber);
 		 registerRender(BlockMobChamberCore);
+		 registerRender(BlockPedastal_Magic);
 		 
 	 }
 	 
