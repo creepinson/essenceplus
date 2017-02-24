@@ -21,6 +21,8 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
 
 public class Pedastal_Magic extends ModBlocks implements ITileEntityProvider {
 
@@ -33,6 +35,7 @@ public class Pedastal_Magic extends ModBlocks implements ITileEntityProvider {
 	
 		return new TileEntityPedastal_Magic();
 	}
+	
 	
 
     @SideOnly(Side.CLIENT)

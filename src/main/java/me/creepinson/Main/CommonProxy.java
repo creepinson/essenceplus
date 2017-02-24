@@ -10,6 +10,7 @@ import me.creepinson.packet.CustomPacket;
 import me.creepinson.packet.CustomPacketHandler;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
