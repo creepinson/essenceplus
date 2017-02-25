@@ -1,6 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "meepersplus:pedastal_magic" },
-        "inventory": [{}]
+        "normal": { "model": "meepersplus:pedastal_magic" }
     }
 }
