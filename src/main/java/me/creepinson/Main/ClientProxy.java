@@ -16,13 +16,13 @@ public class ClientProxy extends CommonProxy {
 		  super.preInit();
 		ItemHandler.registerRenders();
 		BlockHandler.registerRenders();
-		 ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPedastal_Magic.class, new TESRPedastal_Magic());
 		 
 	}
 
 	public void init() {
 		  super.init();
-		
+		  ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPedastal_Magic.class, new TESRPedastal_Magic());
+			
 NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 	}
 

@@ -27,7 +27,7 @@ public class BlockHandler {
 		  
 	    MobChamber = (ItemBlock) new ItemBlock(BlockMobChamber);
 	   
-	    BlockMobChamberCore = new me.creepinson.blocks.BlockMobChamberCore(Material.ROCK, "MobChamberCore", CreativeTabs.BUILDING_BLOCKS, 5F, 15F, 3, "pickaxe");
+	    BlockMobChamberCore = new me.creepinson.blocks.BlockMagicalCore(Material.ROCK, "MobChamberCore", CreativeTabs.BUILDING_BLOCKS, 5F, 15F, 3, "pickaxe");
 		  
 	    MobChamberCore = (ItemBlock) new ItemBlock(BlockMobChamberCore);
 

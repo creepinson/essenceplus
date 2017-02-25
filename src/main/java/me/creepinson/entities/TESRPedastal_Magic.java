@@ -32,7 +32,7 @@ public class TESRPedastal_Magic  extends TileEntitySpecialRenderer<TileEntityPed
         // for rendering
         if (bakedModel == null) {
             try {
-                model = ModelLoaderRegistry.getModel(new ResourceLocation(RefStrings.MODID, "block/pedestalhandles.obj"));
+                model = ModelLoaderRegistry.getModel(new ResourceLocation(RefStrings.MODID, "block/pedastal_magic"));
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -65,9 +65,8 @@ public class TESRPedastal_Magic  extends TileEntitySpecialRenderer<TileEntityPed
     private void renderHandles(TileEntityPedastal_Magic te) {
         GlStateManager.pushMatrix();
 
-        GlStateManager.translate(.5, 0, .5);
-        long angle = (System.currentTimeMillis() / 10) % 360;
-        GlStateManager.rotate(angle, 0, 1, 0);
+        GlStateManager.translate(0, 0, 0);
+  
 
         RenderHelper.disableStandardItemLighting();
         this.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
@@ -97,14 +96,17 @@ public class TESRPedastal_Magic  extends TileEntitySpecialRenderer<TileEntityPed
 
     private void renderItem(TileEntityPedastal_Magic te) {
         ItemStack stack = te.getStack();
+        long angle = (System.currentTimeMillis() / 10) % 360;
+        
         if (stack != null) {
             RenderHelper.enableStandardItemLighting();
             GlStateManager.enableLighting();
             GlStateManager.pushMatrix();
             // Translate to the center of the block and .9 points higher
-            GlStateManager.translate(.5, .9, .5);
+            GlStateManager.translate(.5, 1.4, .5);
             GlStateManager.scale(.4f, .4f, .4f);
-
+            GlStateManager.rotate(angle, te.getPos().getX(), te.getPos().getY(), te.getPos().getZ());
+            
             Minecraft.getMinecraft().getRenderItem().renderItem(stack, ItemCameraTransforms.TransformType.NONE);
 
             GlStateManager.popMatrix();
