@@ -1,6 +1,8 @@
 package me.creepinson.handlers;
 
 import me.creepinson.blocks.BlockMobChamber;
+import me.creepinson.entities.TESRPedastal_Magic;
+import me.creepinson.entities.TileEntityPedastal_Magic;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -8,6 +10,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockHandler {
@@ -52,7 +55,7 @@ public class BlockHandler {
 		 registerRender(BlockMobChamber);
 		 registerRender(BlockMobChamberCore);
 		 registerRender(BlockPedastal_Magic);
-		 
+	
 	 }
 	 
 	 public static void registerRender(Block block){
