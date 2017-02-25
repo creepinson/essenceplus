@@ -64,7 +64,6 @@ public class BlockMagicalCore extends ModBlocks {
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ)
 	{
 	
-	  worldIn.spawnParticle(EnumParticleTypes.CLOUD, pos.getX(), pos.getY() + 1, pos.getZ(), 0.0D, 0.0D, 0.0D);
 	  
 	   
 	  
@@ -88,8 +87,9 @@ public class BlockMagicalCore extends ModBlocks {
 				((TileEntityPedastal_Magic) te4).setStack(null);
 			
                
-               EntityItem itemResult1 = new EntityItem(worldIn, pos.getX(), pos.getY() + 1, pos.getZ(), new ItemStack(me.creepinson.handlers.ItemHandler.BloodEssence, 1));
-     		  
+               EntityItem itemResult1 = new EntityItem(worldIn, pos.getX(), pos.getY() + 1, pos.getZ(), new ItemStack(me.creepinson.handlers.ItemHandler.boneLarge, 1));
+               worldIn.spawnParticle(EnumParticleTypes.CLOUD, pos.getX(), pos.getY() + 1, pos.getZ(), 0.0D, 0.0D, 0.0D);
+         	  
      		  worldIn.spawnEntityInWorld(itemResult1);
      		 
            }

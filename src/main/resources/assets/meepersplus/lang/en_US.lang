@@ -1,5 +1,5 @@
 item.FireEssence.name=Fire Essence
-item.FireCore.name=Core of the Fire
+item.Large_Bone.name=Large Bone
 item.StickOfLightning.name=Staff of Lightning
 item.Syringe.Empty.name=Empty Syringe
 item.Syringe.Full_Player.name=Full Player Blood Syringe
@@ -7,5 +7,5 @@ item.Syringe.Full_Zombie.name=Full Zombie Blood Syringe
 item.BloodEssence.name=Blood Essence
 item.Syringe_Empty.name=Empty Syringe
 tile.MobChamber.name=Mob Chamber
-tile.MobChamberCore.name=Mob Chamber Core
+tile.MobChamberCore.name=Magical Core
 tile.pedastal_magic.name=Magic Pedastal
