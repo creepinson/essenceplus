@@ -8,7 +8,9 @@ import me.creepinson.handlers.ItemHandler;
 import me.creepinson.lib.IProxy;
 import me.creepinson.lib.RefStrings;
 import me.creepinson.packet.CustomPacket;
+import me.creepinson.packet.CustomPacket2;
 import me.creepinson.packet.CustomPacketHandler;
+import me.creepinson.packet.CustomPacketHandler2;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
@@ -34,8 +36,10 @@ public class CommonProxy implements IProxy{
 	
 		GameRegistry.registerTileEntity(TileEntityMobChamber.class, RefStrings.MODID + ":"+ "mobchamber");
 		GameRegistry.registerTileEntity(TileEntityPedastal_Magic.class, RefStrings.MODID + ":"+ "tileEntityPedastalMagic");
-		
+
 		INSTANCE.registerMessage(CustomPacketHandler.class, CustomPacket.class, 0, Side.SERVER);
+
+		INSTANCE.registerMessage(CustomPacketHandler2.class, CustomPacket2.class, 0, Side.SERVER);
 		
 		
 	}

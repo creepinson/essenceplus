@@ -27,11 +27,12 @@ public class BlockMagicalCore extends ModBlocks {
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ)
 	{
 	 TileEntityPedastal_Magic te = (TileEntityPedastal_Magic) worldIn.getTileEntity(pos);
-	    EntityItem itemResult1 = new EntityItem(worldIn, hitZ, hitZ, hitZ, new ItemStack(me.creepinson.handlers.ItemHandler.BloodEssence, 1));
-	    worldIn.spawnParticle(EnumParticleTypes.SMOKE_LARGE, pos.getX(), pos.getY() + 1, pos.getZ(), 100, 100, 100);
-	    worldIn.spawnEntityInWorld(itemResult1);
+	  worldIn.spawnParticle(EnumParticleTypes.SMOKE_LARGE, pos.getX(), pos.getY() + 1, pos.getZ(), 0.0D, 0.0D, 0.0D);
+	  if(!worldIn.isRemote){
+	  EntityItem itemResult1 = new EntityItem(worldIn, hitZ, hitZ, hitZ, new ItemStack(me.creepinson.handlers.ItemHandler.BloodEssence, 1));
+	   worldIn.spawnEntityInWorld(itemResult1);
 	    itemResult1.setPosition(pos.getX(), pos.getY() + 2, pos.getZ());
-	    
+	  }
 	 
 	    return true;
 	}
