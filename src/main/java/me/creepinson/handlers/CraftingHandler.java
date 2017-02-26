@@ -8,8 +8,8 @@ public class CraftingHandler {
 
 	public static void init(){
 	
-		GameRegistry.addRecipe(new ItemStack(ItemHandler.FireCore, 2), " B ", "BXB", " B ", 'X', ItemHandler.FireEssence, 'B', Items.IRON_INGOT);
-		GameRegistry.addRecipe(new ItemStack(ItemHandler.StickOfLightning, 1), " F ", " R ", " R ", 'F', ItemHandler.FireCore, 'R', Items.STICK);
+		GameRegistry.addRecipe(new ItemStack(ItemHandler.Core, 2, 0), " B ", "BXB", " B ", 'X', new ItemStack(ItemHandler.Essence, 1, 0), 'B', Items.IRON_INGOT);
+		GameRegistry.addRecipe(new ItemStack(ItemHandler.StickOfLightning, 1), " F ", " R ", " R ", 'F', new ItemStack(ItemHandler.Core, 1, 0), 'R', Items.STICK);
 
 		
 		

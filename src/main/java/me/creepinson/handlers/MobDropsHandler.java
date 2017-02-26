@@ -21,7 +21,7 @@ public class MobDropsHandler
           
           int temp = (Math.random() <= 0.5) ? 1 : 2;
           int temp2 = (Math.random() <= 0.5) ? 2 : 4;
-          ItemStack stack = new ItemStack(ItemHandler.FireEssence, temp2);
+          ItemStack stack = new ItemStack(ItemHandler.Essence, temp2, 0);
           ItemStack blazepowd = new ItemStack(Items.BLAZE_ROD, temp);
             EntityItem drop = new EntityItem(event.getEntity().worldObj, event.getEntity().posX, event.getEntity().posY, event.getEntity().posZ, stack);
             EntityItem blaze = new EntityItem(event.getEntity().worldObj, event.getEntity().posX, event.getEntity().posY, event.getEntity().posZ, blazepowd);

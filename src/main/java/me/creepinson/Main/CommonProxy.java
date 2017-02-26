@@ -54,6 +54,8 @@ public class CommonProxy implements IProxy{
 	public static void registerModelBakeryVarients(){
 
 		ModelBakery.registerItemVariants(ItemHandler.Syringe, new ResourceLocation(RefStrings.MODID, "Syringe_Empty"), new ResourceLocation(RefStrings.MODID, "Syringe_Full_Zombie"), new ResourceLocation(RefStrings.MODID, "Syringe_Full_Player"));
-		
+		ModelBakery.registerItemVariants(ItemHandler.Core, new ResourceLocation(RefStrings.MODID, "FireCore"), new ResourceLocation(RefStrings.MODID, "FriendlyCore"), new ResourceLocation(RefStrings.MODID, "LifeCore"));
+		ModelBakery.registerItemVariants(ItemHandler.Essence, new ResourceLocation(RefStrings.MODID, "FireEssence"), new ResourceLocation(RefStrings.MODID, "BloodEssence"), new ResourceLocation(RefStrings.MODID, "LifeEssence"));
+
 }
 }
