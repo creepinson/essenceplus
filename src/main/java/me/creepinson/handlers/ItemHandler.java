@@ -8,6 +8,7 @@ import me.creepinson.item.Core;
 import me.creepinson.item.Essence;
 import me.creepinson.item.Large_Bone;
 import me.creepinson.item.StickOfLightning;
+import me.creepinson.lib.RefStrings;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -78,17 +79,17 @@ public class ItemHandler {
 		}
       for(int i = 0; i < Cores.values().length; i++)
  		{
-     	  registerRender(Core, i, EnumHandler.Cores.values()[i].getName() + "Core");
+     	  registerRender(Core, i, EnumHandler.Cores.values()[i].getName() + " Core");
  		}
       for(int i = 0; i < Essences.values().length; i++)
  		{
-     	  registerRender(Essence, i, EnumHandler.Essences.values()[i].getName() + "Essence");
+     	  registerRender(Essence, i, EnumHandler.Essences.values()[i].getName() + " Essence");
  		}
 	 }
 	 
 	 public static void registerRender(Item item, int meta, String fileName){
 			
-		 ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(fileName, "inventory"));
+		 ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(RefStrings.MODID + ":" + fileName, "inventory"));
 
 	 }
 
