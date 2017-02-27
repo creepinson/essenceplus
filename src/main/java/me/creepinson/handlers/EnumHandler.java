@@ -49,9 +49,9 @@ public static enum SyringeTypes implements IStringSerializable
 public static enum Cores implements IStringSerializable
 {
 	
-	Fire("Fire", 0),
-	Friendly("Friendly", 1),
-	Life("Life", 2);
+	fire("fire", 0),
+	friendly("friendly", 1),
+	life("life", 2);
 	
 	private int ID;
 	private String name;
@@ -91,9 +91,9 @@ public static enum Cores implements IStringSerializable
 public static enum Essences implements IStringSerializable
 {
 
-Fire("Fire", 0),
-Blood("Blood", 1),
-Life("Life", 2);
+fire("fire", 0),
+blood("blood", 1),
+life("life", 2);
 private int ID;
 private String name;
 

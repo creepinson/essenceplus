@@ -7,19 +7,16 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 
 public class CustomPacket2 implements IMessage{
-	public static float hitX;
-	public static float hitY;
-	public static float hitZ;
+	
 	public static World world;
 	
 	public static int x;
 	public static int y;
 	public static int z;
+	public static BlockPos pos;
 	// A default constructor is always required
-	  public CustomPacket2(World worldIn, float hitX, float hitY, float hitZ, int x, int y, int z){
-		  this.hitX = hitX;
-		  this.hitZ = hitY;
-		  this.hitZ = hitZ;
+	  public CustomPacket2(World worldIn, BlockPos pos, int x, int y, int z){
+	      this.pos = pos;
 		  this.x = x;
 		  this.y = y;
 		  this.z = z;
@@ -40,10 +37,7 @@ public class CustomPacket2 implements IMessage{
 	    buf.writeInt(y);
 	    buf.writeInt(z);
 	    
-	    buf.writeFloat(hitX);
-	    buf.writeFloat(hitY);
-	    buf.writeFloat(hitZ);
-	    
+	    buf.writeLong(pos.toLong());
 	  
 	  }
 
@@ -55,9 +49,7 @@ public class CustomPacket2 implements IMessage{
 		  y = buf.readInt();
 		  z = buf.readInt();
 		  
-		  hitX = buf.readFloat();
-		  hitY = buf.readFloat();
-		  hitZ = buf.readFloat();
+		  pos = BlockPos.fromLong(buf.readLong());
 		  
 	  }
 	}

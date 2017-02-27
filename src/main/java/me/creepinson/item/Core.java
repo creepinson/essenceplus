@@ -34,7 +34,7 @@ for(int i = 0; i < Cores.values().length; i++)
 		for(int i = 0; i <  Cores.values().length; i++)
 		{
 		if(stack.getItemDamage() == i)	{
-		return	EnumHandler.Cores.values()[i].getName() + this.getUnlocalizedName();
+		return EnumHandler.Cores.values()[i].getName() + "core";
 		}
 		
 		else{
@@ -43,7 +43,7 @@ for(int i = 0; i < Cores.values().length; i++)
 		
 	
 		}
-		return EnumHandler.Cores.Fire.getName() + this.getUnlocalizedName();
+		return EnumHandler.Cores.fire.getName() + "core";
 	
 	}
 	

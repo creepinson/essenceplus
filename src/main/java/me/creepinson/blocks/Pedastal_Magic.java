@@ -1,7 +1,11 @@
 package me.creepinson.blocks;
 
+import java.util.Random;
+
 import me.creepinson.entities.TESRPedastal_Magic;
 import me.creepinson.entities.TileEntityPedastal_Magic;
+import me.creepinson.main.CommonProxy;
+import me.creepinson.packet.CustomPacket2;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -9,8 +13,10 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -21,8 +27,6 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.IItemHandler;
 
 public class Pedastal_Magic extends ModBlocks implements ITileEntityProvider {
 
@@ -35,9 +39,14 @@ public class Pedastal_Magic extends ModBlocks implements ITileEntityProvider {
 	
 		return new TileEntityPedastal_Magic();
 	}
+	@Override
+	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
+	 BlockPos pos2 = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
+	 CommonProxy.INSTANCE.sendToServer(new CustomPacket2(worldIn, pos2, pos.getX(), pos.getY(), pos.getZ()));
+		super.breakBlock(worldIn, pos, state);
+	}
 	
 	
-
     @SideOnly(Side.CLIENT)
     public void initModel() {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));

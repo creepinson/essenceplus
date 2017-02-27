@@ -22,10 +22,10 @@ public class ItemHandler {
 	
 	public static Item boneLarge;
 	public static Item Syringe;
-	public static Item BloodEssence;
 	public static Item UtilitiesBag;
 	
 	public static Item EnergyTablet;
+	public static Item Battery;
 	public static Item CPU;
 	public static Item StorageComponent;
 	public static Item HardDrive;
@@ -43,11 +43,10 @@ public class ItemHandler {
 
 		 StickOfLightning = new StickOfLightning("StickOfLightning", CreativeTabs.MATERIALS).setMaxStackSize(1);
 		 
-		 Essence = new Essence("Essence", CreativeTabs.MATERIALS);
-		 Core = new Core("Core", CreativeTabs.MATERIALS);
+		 Essence = new Essence("essence", CreativeTabs.MATERIALS);
+		 Core = new Core("core", CreativeTabs.MATERIALS);
 		 
 		 Syringe = new me.creepinson.item.Syringe("Syringe", CreativeTabs.MATERIALS).setMaxStackSize(1);
-		 BloodEssence = new BloodEssence("BloodEssence", CreativeTabs.MATERIALS);
 		 UtilitiesBag = new me.creepinson.item.UtilitiesBag("UtilitiesBag", CreativeTabs.MATERIALS);
 		 boneLarge = new Large_Bone("Large_Bone", CreativeTabs.MATERIALS);
 		 
@@ -63,7 +62,7 @@ public class ItemHandler {
 		 GameRegistry.register(StickOfLightning);
 		 GameRegistry.register(Syringe);
 
-		 GameRegistry.register(BloodEssence);
+
 		 GameRegistry.register(boneLarge);
 		 
 	 }
@@ -71,7 +70,6 @@ public class ItemHandler {
 	 public static void registerRenders(){
       registerRender(StickOfLightning);
       registerRender(UtilitiesBag);
-      registerRender(BloodEssence); 
       registerRender(boneLarge); 
       for(int i = 0; i < SyringeTypes.values().length; i++)
 		{
@@ -79,11 +77,11 @@ public class ItemHandler {
 		}
       for(int i = 0; i < Cores.values().length; i++)
  		{
-     	  registerRender(Core, i, EnumHandler.Cores.values()[i].getName() + " Core");
+     	  registerRender(Core, i, EnumHandler.Cores.values()[i].getName() + "core");
  		}
       for(int i = 0; i < Essences.values().length; i++)
  		{
-     	  registerRender(Essence, i, EnumHandler.Essences.values()[i].getName() + " Essence");
+     	  registerRender(Essence, i, EnumHandler.Essences.values()[i].getName() + "essence");
  		}
 	 }
 	 

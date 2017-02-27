@@ -30,7 +30,7 @@ for(int i = 0; i < Essences.values().length; i++)
 		for(int i = 0; i < Essences.values().length; i++)
 		{
 		if(stack.getItemDamage() == i)	{
-		return EnumHandler.Essences.values()[i].getName() + this.getUnlocalizedName();
+		return EnumHandler.Essences.values()[i].getName() + "essence";
 		}
 		
 		else{
@@ -39,7 +39,7 @@ for(int i = 0; i < Essences.values().length; i++)
 		
 	
 		}
-		return EnumHandler.Essences.Fire.getName() + this.getUnlocalizedName();
+		return EnumHandler.Essences.fire.getName() + "essence";
 	
 	}
 }
