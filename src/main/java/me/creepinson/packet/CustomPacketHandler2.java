@@ -23,15 +23,7 @@ public class CustomPacketHandler2 implements IMessageHandler<CustomPacket2, IMes
 	public IMessage onMessage(CustomPacket2 message, MessageContext ctx) {
 
 		EntityPlayerMP serverPlayer = ctx.getServerHandler().playerEntity;
-		TileEntity te = serverPlayer.worldObj.getTileEntity(message.pos);
-		ItemStack stack = ((TileEntityPedastal_Magic) te).getStack();
-		EntityItem itemDropped = new EntityItem(serverPlayer.worldObj, message.pos.getX(), message.pos.getY(), message.pos.getZ(), stack);
-			
 		
-
-
-            serverPlayer.worldObj.spawnEntityInWorld(itemDropped);
-			    stack.stackSize = 0;
 		return null;
 	}
 
