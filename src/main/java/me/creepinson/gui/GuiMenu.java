@@ -2,36 +2,49 @@ package me.creepinson.gui;
 
 import java.io.IOException;
 
+import baubles.api.BaublesApi;
+import baubles.api.cap.BaublesCapabilities;
+import baubles.api.cap.BaublesContainer;
+import baubles.api.cap.BaublesContainerProvider;
+import baubles.api.inv.BaublesInventoryWrapper;
+import baubles.client.gui.BaublesGuiFactory;
+import baubles.common.Baubles;
 import me.creepinson.container.ContainerMobChamber;
 import me.creepinson.entities.TileEntityMobChamber;
+import me.creepinson.handlers.GuiHandler;
+import me.creepinson.main.Main;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.init.PotionTypes;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.client.event.GuiScreenEvent.PotionShiftEvent;
 
-public class GuiUtils1 extends GuiScreen
+public class GuiMenu extends GuiScreen
 {
+	  
+    public GuiMenu(){
+		
+		
+		
+		this.width = 176;
+		this.height = 166;
+	
+		
+	}
 
-	private TileEntityMobChamber te; 
-	private IInventory playerInv;
-    private GuiButton particle1;
+	final int SKILLS = 0;
+	private GuiButton skills;
 
-    private ContainerMobChamber cmb;
     public void initGui()
     {
-    this.particle1 = this.addButton(new GuiButton(0, 0, 0, "Particles 1"));
+    this.skills = this.addButton(new GuiButton(0, 0, 0, "Skills"));
     
-this.te = new TileEntityMobChamber();
+
     
     }
     public static void spawnParticleNote(EntityPlayer player) {
@@ -69,37 +82,16 @@ this.te = new TileEntityMobChamber();
   EntityPlayer player = mc.thePlayer;
             if (button.id == 0)
             {
-            	this.spawnParticleNote(player);
-            	
+           
+            	player.openGui(Main.instance, GuiHandler.SKILLS, mc.theWorld, player.posX, player.posY, player.posZ);
            //  if(ItemStack.areItemsEqual(te.items[0], new ItemStack(ItemHandler.FireCore)) && ItemStack.areItemsEqual(te.items[1], new ItemStack(Items.EGG))){
            
             }
             
              
             }
-    
-    public GuiUtils1(){
-		
-		
-		
-		this.width = 176;
-		this.height = 166;
-	
-		
-	}
+  
 
-	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
-		
-		
-		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-		
-	  
-	}
-	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		String s = I18n.format("gui.utils1"); //Gets the formatted name for the block breaker from the language file - NOTE ADD "container.block_breaker=Block Breaker" to the language file (without quotes) and then delete this note
-		this.mc.fontRendererObj.drawString(s, this.width / 2 - this.mc.fontRendererObj.getStringWidth(s) / 2, 6, 4210752); //Draws the block breaker name in the center on the top of the gui
-		
-	}
 	
 	
 }

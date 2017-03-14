@@ -2,6 +2,7 @@ package me.creepinson.main;
 
 import me.creepinson.entities.TESRPedastal_Magic;
 import me.creepinson.entities.TileEntityPedastal_Magic;
+import me.creepinson.events.EventHandlerMOD;
 import me.creepinson.handlers.BlockHandler;
 import me.creepinson.handlers.GuiHandler;
 import me.creepinson.handlers.ItemHandler;
@@ -16,7 +17,7 @@ public class ClientProxy extends CommonProxy {
 		  super.preInit();
 		ItemHandler.registerRenders();
 		BlockHandler.registerRenders();
-		 
+		
 	}
 
 	public void init() {

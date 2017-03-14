@@ -1,7 +1,7 @@
 package me.creepinson.main;
 
 
-import me.creepinson.handlers.EventHandlerMOD;
+import me.creepinson.events.EventHandlerMOD;
 import me.creepinson.handlers.MobDropsHandler;
 import me.creepinson.lib.IProxy;
 import me.creepinson.lib.RefStrings;
