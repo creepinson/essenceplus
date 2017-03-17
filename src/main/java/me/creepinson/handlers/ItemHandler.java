@@ -43,7 +43,7 @@ public class ItemHandler {
 		 StickOfLightning = new StickOfLightning("StickOfLightning", CreativeTabHandler.ESSENCEPLUS_BASE).setMaxStackSize(1);
 		 
 		 Essence = new Essence("essence", CreativeTabHandler.ESSENCEPLUS_BASE);
-		 Core = new Core("core", CreativeTabs.MATERIALS);
+		 Core = new Core("core", CreativeTabHandler.ESSENCEPLUS_BASE);
 		 
 		 Syringe = new me.creepinson.item.Syringe("Syringe", CreativeTabHandler.ESSENCEPLUS_BASE).setMaxStackSize(1);
 		 

@@ -166,7 +166,7 @@ if(true)
             d3 = ((double)par5Random.nextFloat() - 0.5D) * 0.49999999850988386D;
             d4 = ((double)par5Random.nextFloat() - 0.5D) * 0.49999999850988386D;
             d5 = ((double)par5Random.nextFloat() - 0.5D) * 0.49999999850988386D;
-            par1World.spawnParticle(EnumParticleTypes.REDSTONE, d0, d1, d2, d3, d4, d5);
+            par1World.spawnParticle(EnumParticleTypes.SLIME, d0, d1, d2, d3, d4, d5);
         }
 }
 		
@@ -185,7 +185,7 @@ this.worldObj.spawnEntityInWorld(entityarrow);
 		@Override
 		protected Item getDropItem()
 		{
-			return new ItemStack(ItemHandler.Essence, 2, 3).getItem();
+			return new ItemStack(ItemHandler.Essence, 3, 3).getItem();
 		}
 
 	    @Override
@@ -213,6 +213,15 @@ this.worldObj.spawnEntityInWorld(entityarrow);
 			int j = (int)this.posY;
 			int k = (int)this.posZ;
 			Entity entity = this;
+			
+			j += 1;
+		
+			entity.motionY += 0.5;
+			
+			entity.setFire(1);
+			
+			
+			
 			
 		}
 
