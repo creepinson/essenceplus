@@ -1,0 +1,5 @@
+{
+"creepinoDeath": {"category": "hostile","sounds": [{"name": "meepersplus:creepinoDeath","stream": false}]},
+"creepinoHurt": {"category": "hostile","sounds": [{"name": "meepersplus:creepinoHurt","stream": false}]},
+"creepinoScreech": {"category": "hostile","sounds": [{"name": "meepersplus:creepinoScreech","stream": false}]}
+}

@@ -23,15 +23,15 @@ public class BlockHandler {
 	
 	public static void init(){
 	 
-		BlockMobChamber = new BlockMobChamber(Material.ROCK, "MobChamber", CreativeTabs.BUILDING_BLOCKS, 5F, 15F, 3, "MobChamber");
+		BlockMobChamber = new BlockMobChamber(Material.ROCK, "MobChamber", CreativeTabHandler.ESSENCEPLUS_BASE, 5F, 15F, 3, "MobChamber");
 		  
 	    MobChamber = (ItemBlock) new ItemBlock(BlockMobChamber);
 	   
-	    BlockMobChamberCore = new me.creepinson.blocks.BlockMagicalCore(Material.ROCK, "MobChamberCore", CreativeTabs.BUILDING_BLOCKS, 5F, 15F, 3, "pickaxe");
+	    BlockMobChamberCore = new me.creepinson.blocks.BlockMagicalCore(Material.ROCK, "MobChamberCore", CreativeTabHandler.ESSENCEPLUS_BASE, 5F, 15F, 3, "pickaxe");
 		  
 	    MobChamberCore = (ItemBlock) new ItemBlock(BlockMobChamberCore);
 
-	    BlockPedastal_Magic = new me.creepinson.blocks.Pedastal_Magic(Material.ROCK, "pedastal_magic", CreativeTabs.BUILDING_BLOCKS, 5F, 15F, 3, "pedastal_magic");
+	    BlockPedastal_Magic = new me.creepinson.blocks.Pedastal_Magic(Material.ROCK, "pedastal_magic", CreativeTabHandler.ESSENCEPLUS_BASE, 5F, 15F, 3, "pedastal_magic");
 		  
 	    Pedastal_Magic = (ItemBlock) new ItemBlock(BlockPedastal_Magic);
 	

@@ -11,7 +11,12 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 public class ClientProxy extends CommonProxy {
-	
+	@Override
+	public void registerRenderers(Main ins) {
+		ins.mcreator_0.registerRenderers();
+		ins.mcreator_1.registerRenderers();
+
+	}
 	@Override
 	public void preInit() {
 		  super.preInit();

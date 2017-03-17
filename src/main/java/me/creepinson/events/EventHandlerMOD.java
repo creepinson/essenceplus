@@ -1,7 +1,5 @@
 package me.creepinson.events;
 
-import me.creepinson.main.ExperienceLevels;
-import me.creepinson.main.NBTHelper;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;

@@ -19,7 +19,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
 public class CommonProxy implements IProxy{
-
+	public void registerRenderers(Main ins) {
+	}
 	@Override
 	public void preInit() {
 		BlockHandler.init();

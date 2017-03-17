@@ -22,7 +22,6 @@ public class ItemHandler {
 	
 	public static Item boneLarge;
 	public static Item Syringe;
-	public static Item UtilitiesBag;
 	
 	public static Item EnergyTablet;
 	public static Item Battery;
@@ -41,14 +40,14 @@ public class ItemHandler {
 	public static void init(){
 
 
-		 StickOfLightning = new StickOfLightning("StickOfLightning", CreativeTabs.MATERIALS).setMaxStackSize(1);
+		 StickOfLightning = new StickOfLightning("StickOfLightning", CreativeTabHandler.ESSENCEPLUS_BASE).setMaxStackSize(1);
 		 
-		 Essence = new Essence("essence", CreativeTabs.MATERIALS);
+		 Essence = new Essence("essence", CreativeTabHandler.ESSENCEPLUS_BASE);
 		 Core = new Core("core", CreativeTabs.MATERIALS);
 		 
-		 Syringe = new me.creepinson.item.Syringe("Syringe", CreativeTabs.MATERIALS).setMaxStackSize(1);
-		 UtilitiesBag = new me.creepinson.item.UtilitiesBag("UtilitiesBag", CreativeTabs.MATERIALS);
-		 boneLarge = new Large_Bone("Large_Bone", CreativeTabs.MATERIALS);
+		 Syringe = new me.creepinson.item.Syringe("Syringe", CreativeTabHandler.ESSENCEPLUS_BASE).setMaxStackSize(1);
+		 
+		 boneLarge = new Large_Bone("Large_Bone", CreativeTabHandler.ESSENCEPLUS_BASE);
 		 
 	
 	}
@@ -57,7 +56,7 @@ public class ItemHandler {
 	  
 		 
 		 GameRegistry.register(Core);
-		 GameRegistry.register(UtilitiesBag);
+
 		 GameRegistry.register(Essence);
 		 GameRegistry.register(StickOfLightning);
 		 GameRegistry.register(Syringe);
@@ -69,7 +68,6 @@ public class ItemHandler {
 	 
 	 public static void registerRenders(){
       registerRender(StickOfLightning);
-      registerRender(UtilitiesBag);
       registerRender(boneLarge); 
       for(int i = 0; i < SyringeTypes.values().length; i++)
 		{

@@ -2,13 +2,7 @@ package me.creepinson.gui;
 
 import java.io.IOException;
 
-import baubles.api.BaublesApi;
-import baubles.api.cap.BaublesCapabilities;
-import baubles.api.cap.BaublesContainer;
-import baubles.api.cap.BaublesContainerProvider;
-import baubles.api.inv.BaublesInventoryWrapper;
-import baubles.client.gui.BaublesGuiFactory;
-import baubles.common.Baubles;
+
 import me.creepinson.container.ContainerMobChamber;
 import me.creepinson.entities.TileEntityMobChamber;
 import me.creepinson.handlers.GuiHandler;
@@ -47,17 +41,6 @@ public class GuiMenu extends GuiScreen
 
     
     }
-    public static void spawnParticleNote(EntityPlayer player) {
-  
-    	
-     	World world = player.worldObj ;
-    	BlockPos pos;
-    	
-    	 ItemStack testStack = new ItemStack(Items.CHICKEN);
- player.inventory.addItemStackToInventory(testStack);
-
-    }
-   
     	//if(te != null && te instanceof TileEntityChest){
     	  //  for (int i = 0; i < ((TileEntityChest) te).getSizeInventory(); ++i){
     	    //    System.out.println(((TileEntityChest) te).getStackInSlot(i));
@@ -83,7 +66,7 @@ public class GuiMenu extends GuiScreen
             if (button.id == 0)
             {
            
-            	player.openGui(Main.instance, GuiHandler.SKILLS, mc.theWorld, player.posX, player.posY, player.posZ);
+          
            //  if(ItemStack.areItemsEqual(te.items[0], new ItemStack(ItemHandler.FireCore)) && ItemStack.areItemsEqual(te.items[1], new ItemStack(Items.EGG))){
            
             }
