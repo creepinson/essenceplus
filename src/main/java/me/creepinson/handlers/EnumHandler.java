@@ -156,6 +156,44 @@ public static enum Cores implements IStringSerializable
 
 
 
+public static enum Chips implements IStringSerializable
+{
+
+base("Base", 0),
+redstone("Redstone", 1),
+advanced("Advanced", 2);
+private int ID;
+private String name;
+
+private Chips(String name, int ID){
+	
+	this.ID = ID;
+	this.name = name;
+	
+}
+
+@Override
+public String getName() {
+	
+	return this.name();
+}
+
+
+
+public int getID() {
+	
+	return ID;
+}
+
+@Override
+public String toString() {
+	
+	return super.toString();
+}
+
+}
+
+
 public static enum Essences implements IStringSerializable
 {
 
