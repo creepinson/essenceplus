@@ -5,6 +5,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.List;
 
 import me.creepinson.handlers.EnumHandler;
+import me.creepinson.handlers.EnumHandler.Chips;
 import me.creepinson.handlers.EnumHandler.Cores;
 import me.creepinson.handlers.EnumHandler.SyringeTypes;
 import me.creepinson.lib.RefStrings;
@@ -22,7 +23,7 @@ public class Chip extends ModItems{
 
 	@Override
 	public void getSubItems(Item item, CreativeTabs tab, List<ItemStack> items) {
-for(int i = 0; i < Cores.values().length; i++)
+for(int i = 0; i < Chips.values().length; i++)
 	items.add(new ItemStack(item, 1, i));
 
 	
@@ -31,10 +32,10 @@ for(int i = 0; i < Cores.values().length; i++)
 	
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		for(int i = 0; i <  Cores.values().length; i++)
+		for(int i = 0; i <  Chips.values().length; i++)
 		{
 		if(stack.getItemDamage() == i)	{
-		return EnumHandler.Cores.values()[i].getName() + "core";
+		return  "chip" + EnumHandler.Chips.values()[i].getName();
 		}
 		
 		else{
@@ -43,7 +44,7 @@ for(int i = 0; i < Cores.values().length; i++)
 		
 	
 		}
-		return EnumHandler.Cores.fire.getName() + "core";
+		return "chip" + EnumHandler.Chips.base.getName();
 	
 	}
 	

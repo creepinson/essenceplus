@@ -101,7 +101,7 @@ public class ItemHandler {
       
       for(int i = 0; i < Chips.values().length; i++)
 		{
-   	  registerRender(Chip, i, "chip" + EnumHandler.Cores.values()[i].getName());
+   	  registerRender(Chip, i, "chip" + EnumHandler.Chips.values()[i].getName());
 		}
       
       
