@@ -14,9 +14,15 @@ public class CreativeTabHandler {
 	    }
 	};
 
-	public static final CreativeTabs ESSENCEPLUS_BASE = new CreativeTabs("Creepola"){
+	public static final CreativeTabs ESSENCEPLUS_BASE = new CreativeTabs("EssencePlusBASE"){
 	    @Override public Item getTabIconItem() {
 	        return ItemHandler.Essence;
+	    }
+	};
+	
+	public static final CreativeTabs ESSENCEPLUS_TECH = new CreativeTabs("EssencePlusTECH"){
+	    @Override public Item getTabIconItem() {
+	        return ItemHandler.Chip;
 	    }
 	};
 }

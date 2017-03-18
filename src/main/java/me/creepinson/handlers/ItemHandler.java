@@ -1,8 +1,10 @@
 package me.creepinson.handlers;
 
+import me.creepinson.handlers.EnumHandler.Chips;
 import me.creepinson.handlers.EnumHandler.Cores;
 import me.creepinson.handlers.EnumHandler.Essences;
 import me.creepinson.handlers.EnumHandler.SyringeTypes;
+import me.creepinson.handlers.EnumHandler.Wires;
 import me.creepinson.item.BloodEssence;
 import me.creepinson.item.Core;
 import me.creepinson.item.Essence;
@@ -30,25 +32,36 @@ public class ItemHandler {
 	public static Item HardDrive;
 	public static Item Monitor;
 	public static Item Chip;
-	
+	public static Item Wire;
 	
 	
 	public static Item Core;
 	public static Item Essence;
+	public static Item CopperIngot;
 	
 
 	public static void init(){
-
-
+		//INITIALIZE ITEMS
+		
+         //NON-METADATA ITEMS - INIT START 
 		 StickOfLightning = new StickOfLightning("StickOfLightning", CreativeTabHandler.ESSENCEPLUS_BASE).setMaxStackSize(1);
+		 boneLarge = new Large_Bone("Large_Bone", CreativeTabHandler.ESSENCEPLUS_BASE);
+		 CopperIngot = new me.creepinson.item.CopperIngot("ingotCopper", CreativeTabHandler.ESSENCEPLUS_TECH);
+			 
 		 
+		//NON-METADATA ITEMS - INIT END 
+		 
+/*------------------------------------------------------------------*/
+		 
+		//METADATA ITEMS - INIT START 
 		 Essence = new Essence("essence", CreativeTabHandler.ESSENCEPLUS_BASE);
 		 Core = new Core("core", CreativeTabHandler.ESSENCEPLUS_BASE);
+		 Chip = new me.creepinson.item.Chip("chip", CreativeTabHandler.ESSENCEPLUS_TECH);
+		 Wire = new me.creepinson.item.Wire("wire", CreativeTabHandler.ESSENCEPLUS_TECH);
 		 
 		 Syringe = new me.creepinson.item.Syringe("Syringe", CreativeTabHandler.ESSENCEPLUS_BASE).setMaxStackSize(1);
-		 
-		 boneLarge = new Large_Bone("Large_Bone", CreativeTabHandler.ESSENCEPLUS_BASE);
-		 
+		
+		 //METADATA ITEMS - INIT END 
 	
 	}
 	 
@@ -56,19 +69,23 @@ public class ItemHandler {
 	  
 		 
 		 GameRegistry.register(Core);
-
+		 GameRegistry.register(Chip);
+		 GameRegistry.register(Wire);
 		 GameRegistry.register(Essence);
-		 GameRegistry.register(StickOfLightning);
 		 GameRegistry.register(Syringe);
 
-
+		 GameRegistry.register(StickOfLightning);
 		 GameRegistry.register(boneLarge);
+		 GameRegistry.register(CopperIngot);
 		 
 	 }
 	 
 	 public static void registerRenders(){
       registerRender(StickOfLightning);
       registerRender(boneLarge); 
+      registerRender(CopperIngot); 
+      
+      
       for(int i = 0; i < SyringeTypes.values().length; i++)
 		{
     	  registerRender(Syringe, i, "Syringe_" + EnumHandler.SyringeTypes.values()[i].getName());
@@ -81,6 +98,20 @@ public class ItemHandler {
  		{
      	  registerRender(Essence, i, EnumHandler.Essences.values()[i].getName() + "essence");
  		}
+      
+      for(int i = 0; i < Chips.values().length; i++)
+		{
+   	  registerRender(Chip, i, "chip" + EnumHandler.Cores.values()[i].getName());
+		}
+      
+      
+      for(int i = 0; i < Wires.values().length; i++)
+		{
+ 	  registerRender(Wire, i, "wire" + EnumHandler.Wires.values()[i].getName());
+		}
+      
+      
+      
 	 }
 	 
 	 public static void registerRender(Item item, int meta, String fileName){
