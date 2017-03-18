@@ -23,7 +23,7 @@ public class Core extends ModItems{
 
 	@Override
 	public void getSubItems(Item item, CreativeTabs tab, List<ItemStack> items) {
-for(int i = 0; i < Chips.values().length; i++)
+for(int i = 0; i < Cores.values().length; i++)
 	items.add(new ItemStack(item, 1, i));
 
 	
@@ -32,10 +32,10 @@ for(int i = 0; i < Chips.values().length; i++)
 	
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		for(int i = 0; i <  Chips.values().length; i++)
+		for(int i = 0; i <  Cores.values().length; i++)
 		{
 		if(stack.getItemDamage() == i)	{
-		return   "core" + EnumHandler.Chips.values()[i].getName();
+		return  EnumHandler.Cores.values()[i].getName() + "core";
 		}
 		
 		else{
@@ -44,7 +44,7 @@ for(int i = 0; i < Chips.values().length; i++)
 		
 	
 		}
-		return "core"  + EnumHandler.Chips.base.getName();
+		return EnumHandler.Cores.fire.getName() + "core";
 	
 	}
 	

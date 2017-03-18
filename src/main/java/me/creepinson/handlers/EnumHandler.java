@@ -8,7 +8,7 @@ public class EnumHandler {
 	
 	public static enum Wires implements IStringSerializable
 	{
-		copper("Copper", 0);
+		copper("copper", 0);
 
 		
 		private int ID;
