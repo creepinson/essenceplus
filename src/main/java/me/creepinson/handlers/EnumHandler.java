@@ -121,9 +121,9 @@ public static enum Cores implements IStringSerializable
 public static enum Chips implements IStringSerializable
 {
 
-base("Base", 0),
-redstone("Redstone", 1),
-advanced("Advanced", 2);
+base("base", 0),
+redstone("redstone", 1),
+advanced("advanced", 2);
 private int ID;
 private String name;
 
